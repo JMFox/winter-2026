@@ -3,20 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winter 2026 — Brothers Trip · Two Plans</title>
+<title>Winter 2026 — Brothers Trip · HK · Seoul · Taipei · Macao</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap');
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --seoul-color: #E63946;
-    --osaka-color: #F4A261;
-    --kinosaki-color: #1B6B93;
-    --tokyo-color: #6A4C93;
-    --senjyuan-color: #2D6A4F;
-    --taipei-color: #2A9D8F;
     --hk-color: #C77D38;
+    --seoul-color: #E63946;
+    --taipei-color: #2A9D8F;
+    --macao-color: #8B5CF6;
     --bg: #08090a;
     --card-bg: #111214;
     --card-hover: #161819;
@@ -52,8 +49,8 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1920&q=80') center/cover no-repeat;
-    filter: brightness(0.18) saturate(0.7);
+    background: url('https://images.unsplash.com/photo-1536599524557-5f784dd0c532?w=1920&q=80') center/cover no-repeat;
+    filter: brightness(0.22) saturate(0.75);
     transform: scale(1.05);
     animation: heroZoom 30s ease-in-out infinite alternate;
   }
@@ -84,56 +81,8 @@
     text-transform: uppercase;
     margin-bottom: 2rem;
   }
-  .hero .dates-line { font-size: 1.05rem; font-weight: 500; color: rgba(255,255,255,0.8); margin-bottom: 0.5rem; }
-  .hero .flights-line { font-size: 0.8rem; color: rgba(255,255,255,0.4); font-style: italic; max-width: 700px; margin: 0 auto; }
-
-  /* ═══════ TAB SYSTEM ═══════ */
-  .tab-bar {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(8, 9, 10, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 1rem;
-  }
-  .tab-bar-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .tab-btn {
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.12);
-    color: var(--text-mid);
-    padding: 0.7rem 1.4rem;
-    border-radius: 50px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-  }
-  .tab-btn:hover {
-    border-color: rgba(255,255,255,0.3);
-    color: var(--text);
-  }
-  .tab-btn.active {
-    background: linear-gradient(135deg, var(--seoul-color), var(--tokyo-color));
-    color: white;
-    border-color: transparent;
-  }
-  .tab-btn.active.asia {
-    background: linear-gradient(135deg, var(--seoul-color), var(--hk-color));
-  }
-  .tab-content { display: none; }
-  .tab-content.active { display: block; }
+  .hero .dates-line { font-size: 1.05rem; font-weight: 500; color: rgba(255,255,255,0.85); margin-bottom: 0.5rem; }
+  .hero .flights-line { font-size: 0.78rem; color: rgba(255,255,255,0.45); font-style: italic; max-width: 720px; margin: 0 auto; letter-spacing: 0.05em; }
 
   /* ═══════ ROUTE PILLS ═══════ */
   .route-visual {
@@ -142,7 +91,7 @@
     gap: 0.5rem;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 2rem 0 1.5rem;
+    margin: 3rem 0 1.5rem;
     padding: 0 1rem;
   }
   .route-city {
@@ -163,13 +112,10 @@
     background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
     border-radius: 50px;
   }
-  .pill-seoul { background: var(--seoul-color); }
-  .pill-osaka { background: var(--osaka-color); color: #1a1a1a; }
-  .pill-kinosaki { background: var(--kinosaki-color); }
-  .pill-tokyo { background: var(--tokyo-color); }
-  .pill-senjyuan { background: var(--senjyuan-color); }
-  .pill-taipei { background: var(--taipei-color); }
   .pill-hk { background: var(--hk-color); }
+  .pill-seoul { background: var(--seoul-color); }
+  .pill-taipei { background: var(--taipei-color); }
+  .pill-macao { background: var(--macao-color); }
   .route-arrow { font-size: 1.2rem; color: rgba(255,255,255,0.25); }
   .route-nights { display: block; font-size: 0.6rem; font-weight: 500; opacity: 0.8; margin-top: 2px; }
 
@@ -338,13 +284,10 @@
     height: 8px;
     border-radius: 50%;
   }
-  .seoul-section .time-block::before { background: var(--seoul-color); }
-  .osaka-section .time-block::before { background: var(--osaka-color); }
-  .kinosaki-section .time-block::before { background: var(--kinosaki-color); }
-  .tokyo-section .time-block::before { background: var(--tokyo-color); }
-  .senjyuan-section .time-block::before { background: var(--senjyuan-color); }
-  .taipei-section .time-block::before { background: var(--taipei-color); }
   .hk-section .time-block::before { background: var(--hk-color); }
+  .seoul-section .time-block::before { background: var(--seoul-color); }
+  .taipei-section .time-block::before { background: var(--taipei-color); }
+  .macao-section .time-block::before { background: var(--macao-color); }
   .time-block .time {
     font-size: 0.66rem;
     font-weight: 700;
@@ -411,8 +354,7 @@
     .hero h1 { font-size: 2.8rem; }
     .hero .tagline { font-size: 0.75rem; letter-spacing: 0.2em; }
     .hero .dates-line { font-size: 0.85rem; padding: 0 0.5rem; }
-    .hero .flights-line { font-size: 0.7rem; }
-    .tab-btn { font-size: 0.65rem; padding: 0.55rem 1rem; }
+    .hero .flights-line { font-size: 0.68rem; }
     .route-visual { gap: 0.3rem; }
     .route-city { padding: 0.45rem 0.85rem; font-size: 0.7rem; }
     .stats-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
@@ -453,92 +395,242 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <h1>Winter<br>Brothers</h1>
-    <p class="tagline">December 2026 &middot; Two Plans</p>
-    <p class="dates-line">Dec 18 depart JFK &rarr; Dec 19 arrive Seoul &rarr; Dec 30 home &middot; 11 Nights</p>
-    <p class="flights-line">Plan A: Seoul + Japan &middot; Plan B: Seoul + Taipei + Hong Kong &middot; Same Seoul, different Asia finishes</p>
+    <p class="tagline">December 2026 &middot; The Final Plan</p>
+    <p class="dates-line">Dec 18 depart JFK &rarr; HK &rarr; Seoul &rarr; Taipei &rarr; Macao &rarr; HK &rarr; Dec 30 home</p>
+    <p class="flights-line">JFK&rarr;HKG (Dec 18) &middot; HKG&rarr;ICN 12:35 PM (Dec 21) &middot; ICN&rarr;TPE 9 AM (Dec 25) &middot; TPE&rarr;HKG (Dec 28) &middot; HKG&rarr;JFK (Dec 30 AM)</p>
   </div>
 </section>
 
-<!-- ═══════════════════ TAB BAR ═══════════════════ -->
-<div class="tab-bar">
-  <div class="tab-bar-inner">
-    <button class="tab-btn active" id="tab-japan-btn" onclick="showTab('japan')">Plan A: Seoul + Japan</button>
-    <button class="tab-btn asia" id="tab-asia-btn" onclick="showTab('asia')">Plan B: Seoul + Taipei + HK</button>
-  </div>
-</div>
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!-- ═══════════════════ PLAN A: SEOUL + JAPAN ═══════════════════ -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<div id="japan-content" class="tab-content active">
-
 <div class="content">
 
-  <!-- Plan A route pills -->
+  <!-- Route pills -->
   <div class="route-visual">
+    <span class="route-city pill-hk">Hong Kong<span class="route-nights">2 N</span></span>
+    <span class="route-arrow">&rarr;</span>
     <span class="route-city pill-seoul">Seoul<span class="route-nights">4 N</span></span>
     <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-osaka">Osaka<span class="route-nights">2 N</span></span>
+    <span class="route-city pill-taipei">Taipei<span class="route-nights">3 N</span></span>
     <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-kinosaki">Kinosaki<span class="route-nights">1 N</span></span>
+    <span class="route-city pill-macao">Macao<span class="route-nights">1 N</span></span>
     <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-tokyo">Tokyo<span class="route-nights">1 N</span></span>
-    <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-senjyuan">Senjyuan<span class="route-nights">1 N</span></span>
-    <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-tokyo">Tokyo<span class="route-nights">2 N</span></span>
+    <span class="route-city pill-hk">Hong Kong<span class="route-nights">1 N</span></span>
   </div>
 
-  <!-- Plan A stats -->
+  <!-- Stats -->
   <div class="stats-grid">
-    <div class="stat-card"><div class="stat-num" style="color:var(--seoul-color)">11</div><div class="stat-label">Nights</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--osaka-color)">2</div><div class="stat-label">Countries</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--kinosaki-color)">5</div><div class="stat-label">Unique Stays</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--tokyo-color)">2</div><div class="stat-label">Onsen Towns</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--senjyuan-color)">3</div><div class="stat-label">UNESCO Sites</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--hk-color)">11</div><div class="stat-label">Nights</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--seoul-color)">4</div><div class="stat-label">Cities</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--taipei-color)">5</div><div class="stat-label">Unique Stays</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:var(--macao-color)">3</div><div class="stat-label">UNESCO Sites</div></div>
+    <div class="stat-card"><div class="stat-num" style="color:#ff6b6b">7</div><div class="stat-label">Michelin Stars</div></div>
     <div class="stat-card"><div class="stat-num" style="color:#ffc312">0</div><div class="stat-label">NYC Repeats</div></div>
   </div>
 
-  <!-- Plan A season -->
+  <!-- Season -->
   <div class="season-header">
     <h2>What&rsquo;s In Season</h2>
     <p>December 19 &ndash; 30, 2026</p>
   </div>
   <div class="season-grid">
     <div class="season-card">
-      <div class="season-icon" style="background:rgba(230,57,70,0.12);">&#127870;</div>
-      <div><h4 style="color:var(--seoul-color)">Seoul Samgyetang Season</h4><p>Ginseng chicken soup is winter soul food. Hot broth, cold air, heated palace floors, possible snow.</p></div>
+      <div class="season-icon" style="background:rgba(199,125,56,0.12);">&#127858;</div>
+      <div><h4 style="color:var(--hk-color)">HK Hot Pot &amp; Roast Goose Peak</h4><p>December = peak hot pot season in HK. Yat Lok&rsquo;s 3-Michelin roast goose is at its richest. Sham Shui Po dai pai dong wok hei air feels electric at 16&deg;C.</p></div>
     </div>
     <div class="season-card">
-      <div class="season-icon" style="background:rgba(27,107,147,0.12);">&#129385;</div>
-      <div><h4 style="color:var(--kinosaki-color)">Peak Snow Crab</h4><p>Matsubagani season Nov-Mar at Kinosaki on the Sea of Japan. Christmas Day = full crab kaiseki at an 1861 ryokan.</p></div>
+      <div class="season-icon" style="background:rgba(230,57,70,0.12);">&#127858;</div>
+      <div><h4 style="color:var(--seoul-color)">Seoul Samgyetang Season</h4><p>Ginseng chicken soup is winter soul food. Hot broth, cold air, heated palace floors, possible snow. Korean BBQ tastes 2x better at -5&deg;C.</p></div>
     </div>
     <div class="season-card">
-      <div class="season-icon" style="background:rgba(45,106,79,0.12);">&#10052;&#65039;</div>
-      <div><h4 style="color:var(--senjyuan-color)">Private Onsen in Snow</h4><p>Senjyuan&rsquo;s 18 rooms each have a private outdoor stone bath. Snow falling on your bath = peak luxury Japan winter.</p></div>
+      <div class="season-icon" style="background:rgba(42,157,143,0.12);">&#127858;</div>
+      <div><h4 style="color:var(--taipei-color)">Taipei Hot Pot &amp; Beef Noodle</h4><p>December average 18&deg;C &mdash; perfect night market weather. Mango is out of season but coffin bread, oyster omelets, peppered pork buns are at peak.</p></div>
     </div>
     <div class="season-card">
-      <div class="season-icon" style="background:rgba(244,162,97,0.12);">&#127876;</div>
-      <div><h4 style="color:var(--osaka-color)">Osaka Christmas Eve</h4><p>Umeda Sky Building Christmas market, Castle illumination, Dotonbori at peak neon. December = mild 8-12&deg;C.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(106,76,147,0.12);">&#127979;</div>
-      <div><h4 style="color:var(--tokyo-color)">Brand-New Tokyo</h4><p>Azabudai Hills (Nov 2023) &mdash; Japan&rsquo;s tallest building. teamLab Borderless reopened there Feb 2024.</p></div>
+      <div class="season-icon" style="background:rgba(139,92,246,0.12);">&#10024;</div>
+      <div><h4 style="color:var(--macao-color)">Macao Christmas Lights</h4><p>Senado Square wrapped in Portuguese-meets-Asian Christmas lights. Light Up Macao festival runs into early January. Pastel pink Senate House in full glow.</p></div>
     </div>
     <div class="season-card">
       <div class="season-icon" style="background:rgba(230,57,70,0.12);">&#9832;</div>
-      <div><h4 style="color:var(--seoul-color)">Korean Bathhouse Weather</h4><p>Jjimjilbang culture peaks at -5&deg;C outside. Jade rooms, salt saunas, sleeping halls, sauna eggs + sikhye.</p></div>
+      <div><h4 style="color:var(--seoul-color)">Korean Bathhouse Weather</h4><p>Jjimjilbang culture peaks at -5&deg;C outside. Jade rooms, salt saunas, sleeping halls, sauna eggs + sikhye. Christmas Eve at a jjimjilbang &mdash; very Korean.</p></div>
+    </div>
+    <div class="season-card">
+      <div class="season-icon" style="background:rgba(42,157,143,0.12);">&#127876;</div>
+      <div><h4 style="color:var(--taipei-color)">Banqiao Christmasland</h4><p>Asia&rsquo;s biggest Christmas light festival runs through Dec 28. 30M LEDs, projection mapping on City Hall. Arriving in Taipei on Christmas Day &mdash; lands directly into this.</p></div>
     </div>
   </div>
 
+  <!-- Flight divider: JFK → HK -->
+  <div class="flight-divider">
+    <div class="plane">&#9992;</div>
+    <div class="route-text">JFK &rarr; Hong Kong</div>
+    <div class="detail">Dec 18 (Fri) depart &middot; Dec 19 (Sat) arrive HKG &middot; ~16 hours</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ HONG KONG · ARRIVAL ═══════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="city-section hk-section">
+    <div class="city-hero">
+      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1536599524557-5f784dd0c532?w=1600&q=80');"></div>
+      <div class="city-hero-content">
+        <div class="city-badge" style="background:var(--hk-color);">Leg 1 of 5</div>
+        <h2>Hong Kong</h2>
+        <div class="city-dates">Dec 19 (Sat) &ndash; Dec 21 (Mon AM) &middot; 2 Nights &middot; Wok Hei, Skyline, Dim Sum</div>
+      </div>
+    </div>
+
+    <div class="stays-row">
+      <div class="stay-card">
+        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80');">
+          <div class="nights-badge" style="background:var(--hk-color);">2 NIGHTS</div>
+        </div>
+        <div class="stay-info">
+          <h4>Rosewood Hong Kong</h4>
+          <p>Tsim Sha Tsui waterfront. 322 rooms, but every room is harbour-facing. Asaya spa, Tasting Library, the legendary Asaya Kitchen, and the Manor Club lounge. #1 on World&rsquo;s 50 Best Hotels list 2024.</p>
+          <p class="stay-why">&ldquo;The Victoria Harbour view never gets old. Falling asleep with the skyline on full neon.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HK Day 1 -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 1 &middot; Saturday Dec 19</div></div>
+      <div class="day-title">Arrive Hong Kong &mdash; Star Ferry &amp; Wok Hei Baptism</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1503777119540-1771bdca7763?w=600&q=80" alt="Star Ferry Victoria Harbour">
+          <img src="https://images.unsplash.com/photo-1576487248805-cd45f6c2efeb?w=600&q=80" alt="Hong Kong dai pai dong">
+          <img src="https://images.unsplash.com/photo-1576487236047-c8b7a13540ce?w=600&q=80" alt="HK skyline neon">
+        </div>
+        <div class="time-block">
+          <div class="time">Afternoon</div>
+          <h4>Land HKG &rarr; Rosewood Hong Kong</h4>
+          <p>Land at HKG. Private car to Tsim Sha Tsui (~45 min). Check into Rosewood. Every room is harbour-facing. Take 20 minutes on the balcony to absorb the Victoria Harbour skyline.</p>
+          <span class="tag tag-unique">Only here</span>
+        </div>
+        <div class="time-block">
+          <div class="time">5:00 PM</div>
+          <h4>Star Ferry &mdash; HK&rsquo;s $0.50 Icon</h4>
+          <p>The 1888-founded Star Ferry from Tsim Sha Tsui to Central. 8-minute crossing. Lower deck. National Geographic listed it as one of the &ldquo;50 places of a lifetime.&rdquo; The fare is HK$5 (~$0.65 USD).</p>
+          <span class="tag tag-culture">Culture</span>
+          <div class="nyc-badge">&#9733; No NYC ferry exists with this level of historic dignity</div>
+        </div>
+        <div class="time-block">
+          <div class="time">6:00 PM</div>
+          <h4>Symphony of Lights from the Promenade</h4>
+          <p>8 PM nightly: 44 buildings on both sides of the harbour light up in synchronized lasers + music. Watch from the Tsim Sha Tsui Promenade. World&rsquo;s largest permanent light show (Guinness, 2005).</p>
+          <span class="tag tag-event">Event</span>
+        </div>
+        <div class="time-block">
+          <div class="time">8:00 PM</div>
+          <h4>Sham Shui Po Dai Pai Dong</h4>
+          <p>Cross to Kowloon&rsquo;s working-class food district. <strong>Sing Heung Yuen</strong> &mdash; tomato beef noodle on the street. Jet-fuel-burner wok hei. The chef tosses a wok 4 ft over flame. <strong>Liu Sang</strong> for cart noodles. <strong>Kung Wo Beancurd</strong> for handmade tofu pudding.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; Open-flame dai pai dong cooking is illegal in NYC. Wok hei at this temperature does not exist in America.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">Late</div>
+          <h4>Cocktails at Aqua Spirit (29th floor)</h4>
+          <p>Floor-to-ceiling glass on the Kowloon side. Watch the HK Island skyline. Yakitori-and-cocktails. The view is the show.</p>
+          <span class="tag tag-unique">Only here</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HK Day 2 -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 2 &middot; Sunday Dec 20</div></div>
+      <div class="day-title">Dim Sum, M+, Tai Kwun &amp; Temple Street Night Market</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="Dim sum HK">
+          <img src="https://images.unsplash.com/photo-1551038247-3d9af20df552?w=600&q=80" alt="M+ Museum HK">
+          <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=600&q=80" alt="Temple Street night market">
+        </div>
+        <div class="time-block">
+          <div class="time">8:00 AM</div>
+          <h4>Dim Sum at Lin Heung Kui (Trolley Style)</h4>
+          <p>The last great traditional trolley dim sum in HK. Aunties push steam carts through the room. You stand up, lift the lid, point. Order <strong>har gow, siu mai, char siu bao, cheung fun, mango pudding</strong>. Loud, chaotic, perfect.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; NYC dim sum is order-from-menu. Trolley dim sum is a dying art &mdash; experience it before it&rsquo;s gone.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">10:30 AM</div>
+          <h4>M+ Museum &mdash; Asia&rsquo;s Tate Modern</h4>
+          <p>Herzog &amp; de Meuron 2021 building on the West Kowloon waterfront. 33-story LED facade. Greatest collection of post-war Asian visual culture on earth. Tsang Tsou-choi calligraphy, Pipilotti Rist video installations, Wong Kar-wai film archive.</p>
+          <span class="tag tag-culture">Culture</span>
+          <div class="nyc-badge">&#9733; No NYC museum has this depth on contemporary Asian art</div>
+        </div>
+        <div class="time-block">
+          <div class="time">1:00 PM</div>
+          <h4>Mak&rsquo;s Noodle (Central) &mdash; Wonton Soup Origin</h4>
+          <p>1968 wonton noodle institution. Tiny bowls (intentional). Hand-rolled wonton skin, shrimp-and-pork filling, bamboo-pole pressed noodles. The Michelin Guide called it &ldquo;the soul of Hong Kong street food.&rdquo;</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">2:30 PM</div>
+          <h4>Tai Kwun Centre for Heritage and Arts</h4>
+          <p>Former Central Police Station &amp; Victoria Prison (1841). Restored 2018. Now a 16-building heritage and contemporary art compound by Herzog &amp; de Meuron. Walk the granite walls, the warders&rsquo; quarters, then JC Contemporary art gallery.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">5:00 PM</div>
+          <h4>Nan Lian Garden + Chi Lin Nunnery</h4>
+          <p>Free-entry Tang Dynasty-style classical Chinese garden. Hand-built without nails. Zen waterfalls. Adjacent Chi Lin Nunnery is built entirely of cypress wood, traditional joinery. A meditative escape inside the city. 30 minutes by MTR from Central.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-nature">Nature</span>
+          <div class="nyc-badge">&#9733; A real Tang Dynasty garden in the middle of a city &mdash; impossible anywhere in the US</div>
+        </div>
+        <div class="time-block">
+          <div class="time">7:30 PM</div>
+          <h4>Temple Street Night Market &amp; Mong Kok</h4>
+          <p>Yau Ma Tei&rsquo;s night market &mdash; fortune tellers, Cantonese opera buskers, dai pai dong food stalls. Dinner at <strong>Mido Caf&eacute;</strong> (1950 cha chaan teng, lacquered second-floor view of Tin Hau Temple): baked pork chop rice + Hong Kong milk tea.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">Late</div>
+          <h4>Wong Tai Sin Temple Late-Night Visit</h4>
+          <p>The most famous Taoist temple in HK, open until 9 PM. Locals come at night to shake fortune sticks (kau cim). 5 different deities, 1921, lacquered red and gold against night sky.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- HK Day 3 morning -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 3 &middot; Monday Dec 21 (AM)</div></div>
+      <div class="day-title">Final HK Yum Cha &rarr; Flight to Seoul</div>
+      <div class="day-card-body">
+        <div class="time-block">
+          <div class="time">8:00 AM</div>
+          <h4>Final HK Breakfast: Australia Dairy Co.</h4>
+          <p>The most ruthless wait staff in Hong Kong. Steamed milk pudding, scrambled egg on toast, ham macaroni soup. You will be in and out in 12 minutes. Old-school cha chaan teng energy.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">10:00 AM</div>
+          <h4>Private Car to HKG</h4>
+          <p>Check out of Rosewood. Private car to HKG (~45 min depending on Lantau traffic).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flight: HK → Seoul -->
+  <div class="flight-divider">
+    <div class="plane">&#9992;</div>
+    <div class="route-text">Hong Kong &rarr; Seoul</div>
+    <div class="detail">Dec 21 (Mon) &middot; HKG 12:35 PM departure &middot; ~3h 45m flight &middot; ICN evening arrival</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
   <!-- ═══════════════════ SEOUL ═══════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
   <section class="city-section seoul-section">
     <div class="city-hero">
       <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?w=1600&q=80');"></div>
       <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--seoul-color);">Leg 1 of 5</div>
+        <div class="city-badge" style="background:var(--seoul-color);">Leg 2 of 5</div>
         <h2>Seoul</h2>
-        <div class="city-dates">Dec 19 (Sat) &ndash; Dec 23 (Wed AM) &middot; 4 Nights &middot; Palaces, Temples, Markets</div>
+        <div class="city-dates">Dec 21 (Mon PM) &ndash; Dec 25 (Thu AM) &middot; 4 Nights &middot; Palaces, Markets, Christmas Eve</div>
       </div>
     </div>
 
@@ -549,16 +641,16 @@
         </div>
         <div class="stay-info">
           <h4>Signiel Seoul</h4>
-          <p>Floors 76&ndash;101 of Lotte World Tower (555m, world&rsquo;s 5th tallest). 235 rooms in the sky. Two Michelin-starred restaurants on-site (STAY by Yannick Alleno + BICENA).</p>
+          <p>Floors 76&ndash;101 of Lotte World Tower (555m, world&rsquo;s 5th tallest). 235 rooms in the sky. Two Michelin-starred restaurants on-site (STAY by Yannick All&eacute;no + BICENA).</p>
           <p class="stay-why">&ldquo;The altitude IS the experience. No NYC hotel puts you 300m above the city.&rdquo;</p>
         </div>
       </div>
     </div>
 
-    <!-- Seoul Day 1 -->
+    <!-- Seoul Day 1 (Dec 21 evening) -->
     <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 1 &middot; Saturday Dec 19</div></div>
-      <div class="day-title">Arrive Seoul &mdash; Stream Lights &amp; Myeongdong Steam</div>
+      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 1 &middot; Monday Dec 21 (Eve)</div></div>
+      <div class="day-title">Arrive Seoul &mdash; Cheonggyecheon Lights &amp; Myeongdong Steam</div>
       <div class="day-card-body">
         <div class="day-img-strip">
           <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=600&q=80" alt="Seoul neon streets">
@@ -566,29 +658,29 @@
           <img src="https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?w=600&q=80" alt="Seoul winter skyline">
         </div>
         <div class="time-block">
-          <div class="time">Afternoon</div>
-          <h4>Arrive Incheon &rarr; Check Into the Sky</h4>
-          <p>Private car to <strong>Signiel Seoul</strong> (~1 hr). Your room starts above the 76th floor of a 555m tower. Floor-to-ceiling windows. Entire city below.</p>
+          <div class="time">5:30 PM</div>
+          <h4>Land ICN &rarr; Signiel Seoul</h4>
+          <p>Land at Incheon. Private car to Signiel (~1 hr). Your room starts above floor 76 of a 555m tower. Floor-to-ceiling windows. Entire city below.</p>
           <span class="tag tag-unique">Only here</span>
           <div class="nyc-badge">&#9733; No NYC hotel puts you at 300+ meters altitude</div>
         </div>
         <div class="time-block">
-          <div class="time">5:00 PM</div>
-          <h4>Cheonggyecheon Stream Winter Walk</h4>
-          <p>11km illuminated urban stream cutting through downtown. December lights transform it into a glowing winter corridor. Walk to Myeongdong.</p>
-          <span class="tag tag-culture">Culture</span>
+          <div class="time">8:00 PM</div>
+          <h4>Cheonggyecheon Stream Christmas Lights</h4>
+          <p>11km illuminated urban stream cutting through downtown. December Christmas light installation transforms it into a glowing winter corridor. Walk to Myeongdong.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-event">Event</span>
         </div>
         <div class="time-block">
-          <div class="time">6:30 PM</div>
+          <div class="time">9:00 PM</div>
           <h4>Myeongdong Street Food Baptism</h4>
-          <p><strong>Tteokbokki</strong> (spicy rice cakes &mdash; Seoul&rsquo;s soul food), <strong>hotteok</strong> (sweet syrup pancakes, perfect in freezing air), <strong>bungeoppang</strong> (fish-shaped pastry with red bean). The entire alley steams in the December cold.</p>
+          <p><strong>Tteokbokki</strong> (spicy rice cakes), <strong>hotteok</strong> (sweet syrup pancakes, perfect in freezing air), <strong>bungeoppang</strong> (fish-shaped pastry with red bean), <strong>gyeran-ppang</strong> (whole-egg bread). Entire alley steaming in December cold.</p>
           <span class="tag tag-food">Food</span>
           <div class="nyc-badge">&#9733; Steam rising from carts in -5&deg;C air. NYC has no equivalent.</div>
         </div>
         <div class="time-block">
-          <div class="time">Late night</div>
+          <div class="time">Late</div>
           <h4>Pojangmacha Tent Bar</h4>
-          <p>Soju + <strong>pajeon</strong> (scallion pancake) at an orange plastic tent bar. THE Korean winter night experience. Order <strong>sundae</strong> (blood sausage) and <strong>odeng</strong> (fish cake skewers in broth).</p>
+          <p>Soju + <strong>pajeon</strong> (scallion pancake) at an orange plastic tent. THE Korean winter night experience. Order <strong>sundae</strong> (blood sausage) and <strong>odeng</strong> (fish cake skewers in broth).</p>
           <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
         </div>
       </div>
@@ -596,1326 +688,631 @@
 
     <!-- Seoul Day 2 -->
     <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 2 &middot; Sunday Dec 20</div></div>
-      <div class="day-title">Palaces in Snow &amp; Gwangjang Feast</div>
+      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 2 &middot; Tuesday Dec 22</div></div>
+      <div class="day-title">Palace Day &mdash; Gyeongbokgung, Bukchon &amp; Gwangjang Market</div>
       <div class="day-card-body">
         <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1548115184-bc6544d06a58?w=600&q=80" alt="Gyeongbokgung Palace">
-          <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&q=80" alt="Korean BBQ">
-          <img src="https://images.unsplash.com/photo-1583224994076-0a498f2e0722?w=600&q=80" alt="Korean hanok village">
+          <img src="https://images.unsplash.com/photo-1601275002433-c70e0a3f4a91?w=600&q=80" alt="Gyeongbokgung Palace">
+          <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?w=600&q=80" alt="Bukchon hanok village">
+          <img src="https://images.unsplash.com/photo-1539114672287-d61f29c00ed8?w=600&q=80" alt="Gwangjang Market food">
         </div>
         <div class="time-block">
-          <div class="time">7:30 AM &mdash; Breakfast</div>
-          <h4>Tosokchon Samgyetang</h4>
-          <p>5 Jahamun-ro 5-gil. Since 1983. Ginseng-stuffed chicken in milky broth with pine nuts, walnuts, black sesame. Heated floors, wooden beams. Next door to Gyeongbokgung.</p>
-          <span class="tag tag-food">Breakfast</span>
-          <div class="nyc-badge">&#9733; Samgyetang on heated floors in a freezing Seoul morning</div>
+          <div class="time">7:30 AM</div>
+          <h4>Tongin Market Lunchbox Cafe Breakfast</h4>
+          <p>Get a brass tray and 10 old coins. Walk the market and trade coins for individual banchan dishes &mdash; oily mackerel, kimchi pancake, japchae, eggs. Build your own Korean breakfast. Only in Korea.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
         </div>
         <div class="time-block">
           <div class="time">9:30 AM</div>
           <h4>Gyeongbokgung Palace + Hanbok Rental</h4>
-          <p>14th-century Joseon Dynasty palace. <strong>Rent hanbok</strong> (traditional dress) &mdash; free palace entry + incredible photos. Guard ceremony 10 AM. Snow on rooftops if lucky.</p>
+          <p>Wear hanbok &mdash; free admission to all four palaces. Watch the Changing of the Guard ceremony (10 AM). 1395 main royal palace of Joseon dynasty. National Folk Museum on the grounds.</p>
           <span class="tag tag-culture">Culture</span>
-          <div class="nyc-badge">&#9733; Two brothers in hanbok at a 14th-century palace. Peak Korea.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">11:00 AM</div>
-          <h4>Bukchon Hanok Village</h4>
-          <p>600-year-old traditional houses on the hillside between two palaces. Walk the 8 scenic viewpoints.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM &mdash; The Main Event</div>
-          <h4>Gwangjang Market</h4>
-          <p>Korea&rsquo;s first permanent market (1905). <strong>Bindaetteok</strong> (mung bean pancakes) + <strong>makgeolli</strong> (rice wine). <strong>Mayak gimbap</strong> (&ldquo;addictive rice rolls&rdquo;). <strong>Yukhoe</strong> (Korean beef tartare). <strong>Sundae</strong> (blood sausage). Each vendor specializes in one dish for 40+ years.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Single-dish specialists perfecting one item for decades</div>
-        </div>
-        <div class="time-block">
-          <div class="time">2:30 PM</div>
-          <h4>Changdeokgung Secret Garden (UNESCO)</h4>
-          <p>Guided tour only &mdash; <strong>book online immediately</strong> (sells out in minutes). 78 acres of pavilions, frozen ponds, ancient trees. Winter bare branches over ice. Nearly empty in December.</p>
-          <span class="tag tag-culture">UNESCO</span>
-          <div class="nyc-badge">&#9733; Secret royal garden in winter silence</div>
-        </div>
-        <div class="time-block">
-          <div class="time">4:30 PM</div>
-          <h4>Insadong Tea House Warm-Up</h4>
-          <p>Traditional Korean tea (<strong>ssanghwa-cha</strong>, <strong>omija-cha</strong>) in a hanok tearoom. Defrost after 6 hours of outdoor exploring.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Dinner</div>
-          <h4>Korean BBQ at Maple Tree House</h4>
-          <p>Premium <strong>hanwoo beef</strong> grilled tableside. Korean BBQ in its homeland.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Hanwoo beef graded at a level that doesn&rsquo;t exist outside Korea</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seoul Day 3 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 3 &middot; Monday Dec 21</div></div>
-      <div class="day-title">Ancient Temple, Korean Spa &amp; Chimaek Night</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Buddhist temple Korea">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbec6f?w=600&q=80" alt="Korean spa">
-          <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80" alt="Korean fried chicken">
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 AM &mdash; Breakfast</div>
-          <h4>Namdaemun Market</h4>
-          <p>Korea&rsquo;s oldest market (1414). <strong>Kalguksu</strong> (hand-cut noodle soup) &mdash; boiling broth, chewy noodles. Vendors who&rsquo;ve run the same stall for 40+ years. Open since 5 AM.</p>
-          <span class="tag tag-food">Breakfast</span>
-        </div>
-        <div class="time-block">
-          <div class="time">9:30 AM</div>
-          <h4>Bongeunsa Temple</h4>
-          <p>1,200-year-old Buddhist temple beneath Gangnam skyscrapers. 23m Maitreya Buddha. Winter incense in freezing air. Ancient temple at the foot of glass towers.</p>
-          <span class="tag tag-culture">Temple</span>
-          <div class="nyc-badge">&#9733; 1,200-year-old temple framed by Seoul&rsquo;s tallest skyscrapers</div>
-        </div>
-        <div class="time-block">
-          <div class="time">11:00 AM</div>
-          <h4>Ikseon-dong</h4>
-          <p>Seoul&rsquo;s oldest hanok neighborhood, now the coolest &mdash; tiny cafes, galleries, vintage shops in 100-year-old alleyways. Grab <strong>tteokbokki</strong> from a street vendor.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM</div>
-          <h4>Jokbal Alley (Jangchung-dong)</h4>
-          <p>Entire alley of braised pig&rsquo;s trotters restaurants. Rich, gelatinous, impossible at this level anywhere else.</p>
-          <span class="tag tag-food">Food</span>
-        </div>
-        <div class="time-block">
-          <div class="time">2:00 PM</div>
-          <h4>Siloam Sauna &mdash; Jjimjilbang</h4>
-          <p>Multi-floor Korean bathhouse near Seoul Station. Jade rooms, salt rooms, sleeping halls, egg-head towels. More local than Dragon Hill, open 24/7. THE cultural experience of Korea.</p>
-          <span class="tag tag-unique">Only here</span>
-          <div class="nyc-badge">&#9733; Multi-floor bathhouse culture does not exist in America</div>
-        </div>
-        <div class="time-block">
-          <div class="time">4:30 PM &mdash; Jjimjilbang Snack</div>
-          <h4>Sauna Eggs &amp; Sikhye</h4>
-          <p>Inside the jjimjilbang: <strong>maekbanseok gyeran</strong> (eggs baked on hot stones until brown and nutty) and <strong>sikhye</strong> (sweet fermented rice punch, ice cold). Wrap your head in the sheep-towel and snack on the heated floor.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; Chimaek Night</div>
-          <h4>Korean Fried Chicken + Beer Crawl in Hongdae</h4>
-          <p><strong>Chimaek</strong> = chicken + maekju (beer). Korea&rsquo;s national pastime. Hit <strong>Yoogane</strong> for dakgalbi or <strong>Kkanbu Chicken</strong> for double-fried bone-in. Then bar-hop the Hongdae alleys.</p>
-          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
-          <div class="nyc-badge">&#9733; Double-fried Korean chicken with pickled radish at the source</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Seoul Day 4 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 4 &middot; Tuesday Dec 22</div></div>
-      <div class="day-title">Suwon UNESCO Day Trip &amp; Mingles Farewell</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1571767454098-246b94fbcf70?w=600&q=80" alt="Korean palace fortress">
-          <img src="https://images.unsplash.com/photo-1583224994076-0a498f2e0722?w=600&q=80" alt="Joseon village">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining">
-        </div>
-        <div class="time-block">
-          <div class="time">9:00 AM</div>
-          <h4>KTX to Suwon</h4>
-          <p>30-minute KTX from Seoul Station. Arrive at the doorstep of an 18th-century UNESCO city.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 AM</div>
-          <h4>Hwaseong Haenggung Palace</h4>
-          <p>King Jeongjo&rsquo;s 1796 royal residence inside the fortress walls. Smaller and more intimate than Gyeongbokgung. Watch the changing-of-the-guard ceremony.</p>
-          <span class="tag tag-culture">Culture</span>
-        </div>
-        <div class="time-block">
-          <div class="time">11:30 AM</div>
-          <h4>Hwaseong Fortress Walls (UNESCO)</h4>
-          <p>Walk 5.7 km of 18th-century stone fortress walls (gentle, mostly flat with stairs at the gates). 4 grand gates, command posts, beacon mounds. UNESCO 1997.</p>
-          <span class="tag tag-culture">UNESCO</span>
-          <div class="nyc-badge">&#9733; Walking 230-year-old fortress walls in winter mist</div>
-        </div>
-        <div class="time-block">
-          <div class="time">1:30 PM &mdash; Lunch at Suwon&rsquo;s Most Iconic Spot</div>
-          <h4>Yeonpo Galbi &mdash; The Original Korean BBQ Rib (Since 1945)</h4>
-          <p>King Jeongjo&rsquo;s royal kitchen perfected galbi here in the 1790s. Yeonpo has been serving the canonical Suwon-style version since 1945. <strong>This is the actual origin of Korean BBQ as you know it.</strong></p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Korean BBQ at the literal birthplace of the dish</div>
-        </div>
-        <div class="time-block">
-          <div class="time">3:00 PM</div>
-          <h4>Korean Folk Village (Yongin)</h4>
-          <p>30-min taxi from Suwon. Living open-air Joseon-era village with <strong>240 traditional houses</strong>. Scheduled performances throughout the day &mdash; equestrian feats, tightrope walking, wedding ceremony reenactment, farmers&rsquo; music. Real artisans demonstrating weaving, pottery, blacksmithing.</p>
-          <span class="tag tag-culture">Culture</span>
-          <div class="nyc-badge">&#9733; Joseon-era village frozen in time, with live performances</div>
-        </div>
-        <div class="time-block">
-          <div class="time">5:30 PM</div>
-          <h4>KTX Back to Seoul</h4>
-          <p>Quick reset at Signiel before the farewell dinner.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; Farewell Dinner</div>
-          <h4>Mingles &#11088;&#11088;&#11088; (3 Michelin Stars)</h4>
-          <p>Chef Mingoo Kang&rsquo;s modern Korean. Asia&rsquo;s 50 Best Restaurants top 15. Seasonal Korean ingredients reimagined. <strong>No NYC outpost &mdash; this restaurant exists only in Seoul.</strong></p>
-          <span class="tag tag-food">Fine Dining</span>
-          <div class="nyc-badge">&#9733; 3-Michelin Korean fine dining. Exists only in Seoul.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#9992;&#65039;</div>
-      <div class="route-text">Seoul &rarr; Osaka</div>
-      <div class="detail">Dec 23 &middot; Morning flight &middot; ~1.5 hr direct &middot; Korean Air, Asiana, ANA, JAL</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ OSAKA ═══════════════════ -->
-  <section class="city-section osaka-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1542931287-023b922fa89b?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--osaka-color); color:#1a1a1a;">Leg 2 of 5</div>
-        <h2>Osaka</h2>
-        <div class="city-dates">Dec 23 (Wed) &ndash; Dec 25 (Fri AM) &middot; 2 Nights &middot; Kuidaore (Eat-Til-You-Drop)</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--osaka-color); color:#1a1a1a;">2 NIGHTS</div>
-        </div>
-        <div class="stay-info">
-          <h4>Zentis Osaka</h4>
-          <p>Boutique design hotel by <strong>Tara Bernerd</strong> &mdash; Scandinavian calm fused with Japanese craft (Shigaraki-yaki bedside tables from Shiga, bento-box modular room layouts). 212 rooms, opened 2020. <strong>Design Hotels member.</strong> Michelin-starred chef Shinya Otsuchihashi runs the in-house French-Japanese restaurant Upstairz.</p>
-          <p class="stay-why">&ldquo;The most genuinely cool design hotel in Osaka &mdash; Japandi craft, not corporate-luxury. Plus Michelin in-house dining means a great Day 5 arrival meal.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Osaka Day 5 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--osaka-color);">Day 5 &middot; Wednesday Dec 23</div></div>
-      <div class="day-title">Land in Osaka &mdash; Dotonbori Neon &amp; Kushikatsu</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1542931287-023b922fa89b?w=600&q=80" alt="Dotonbori neon">
-          <img src="https://images.unsplash.com/photo-1612203985729-70726954388c?w=600&q=80" alt="Takoyaki">
-          <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80" alt="Osaka castle">
-        </div>
-        <div class="time-block">
-          <div class="time">Morning &mdash; Fly</div>
-          <h4>Seoul ICN &rarr; Osaka KIX</h4>
-          <p>~1.5 hr direct flight. Express train (Haruka or Nankai Rapi:t) into the city, ~50 min. Check into Tadao Ando&rsquo;s W Osaka.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">3:00 PM</div>
-          <h4>Hozenji Yokocho Lantern Alley</h4>
-          <p>Tiny 80m stone-paved alley in central Osaka. Lined with traditional lantern-lit izakaya. Hozenji Temple at the end (the moss-covered Buddha). Where locals drink before the tourists find Dotonbori.</p>
-          <span class="tag tag-culture">Culture</span>
-          <div class="nyc-badge">&#9733; Lantern-lit Edo-era stone alley in modern Osaka</div>
-        </div>
-        <div class="time-block">
-          <div class="time">5:00 PM &mdash; Snack</div>
-          <h4>Takoyaki at Wanaka</h4>
-          <p>The classic Osaka octopus balls. Wanaka is one of the city&rsquo;s top spots &mdash; crispy outside, molten inside. Eat 8 in 4 minutes, complain about your burned tongue.</p>
-          <span class="tag tag-food">Snack</span>
-          <div class="nyc-badge">&#9733; Takoyaki at the actual home of takoyaki</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Dinner</div>
-          <h4>Kushikatsu Daruma (Since 1929)</h4>
-          <p>The original kushikatsu (deep-fried skewers, panko-crusted) shop. <strong>NEVER DOUBLE-DIP</strong> the communal sauce &mdash; the cardinal sin. 40+ skewer varieties: pork, lotus root, eggplant, scallop, mochi, banana.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; The original 1929 kushikatsu joint, communal sauce, no double-dipping</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:30 PM</div>
-          <h4>Dotonbori Glico-Sign Walk</h4>
-          <p>The iconic Osaka neon strip. The Glico Running Man. Crab signs, blowfish lanterns, river reflection. Best at night when every sign is lit.</p>
-          <span class="tag tag-culture">Iconic</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Osaka Day 6 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--osaka-color);">Day 6 &middot; Thursday Dec 24 &middot; CHRISTMAS EVE</div></div>
-      <div class="day-title">Kuromon Market &amp; Castle Christmas Lights</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80" alt="Japanese market food">
-          <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80" alt="Osaka Castle illumination">
-          <img src="https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=600&q=80" alt="Sushi counter">
-        </div>
-        <div class="time-block">
-          <div class="time">8:00 AM &mdash; Breakfast</div>
-          <h4>Kuromon Ichiba Market</h4>
-          <p>&ldquo;Osaka&rsquo;s kitchen.&rdquo; 580m of stalls, 170+ vendors. Fresh uni shells (cracked open in front of you), seared scallops, A5 wagyu skewers grilled over binchotan, fugu (blowfish), live snow crab tanks.</p>
-          <span class="tag tag-food">Breakfast</span>
-          <div class="nyc-badge">&#9733; Uni straight from the shell. Live snow crab. Wagyu skewers.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">11:00 AM</div>
-          <h4>Osaka Castle + Park</h4>
-          <p>Toyotomi Hideyoshi&rsquo;s 1583 fortress (current concrete reconstruction is 1931). The 8-floor castle museum is fine; the real draw is the moat, walls, plum garden, and atmosphere of the Park. Walk the outer moat.</p>
-          <span class="tag tag-culture">Culture</span>
-        </div>
-        <div class="time-block">
-          <div class="time">1:30 PM &mdash; Lunch</div>
-          <h4>Mizuno Okonomiyaki (Michelin Bib Gourmand, Since 1945)</h4>
-          <p>Tiny shop in Dotonbori. The cult Osaka okonomiyaki spot. Cooked at your table on the iron griddle. Yamaimo (mountain yam) added for fluffy texture &mdash; Mizuno&rsquo;s signature. Order the &ldquo;Yamaimoyaki.&rdquo;</p>
-          <span class="tag tag-food">Food</span>
-        </div>
-        <div class="time-block">
-          <div class="time">4:00 PM &mdash; Snack</div>
-          <h4>Umeda Sky Building Christmas Market</h4>
-          <p>German-themed Christmas market beneath the iconic 1993 Hiroshi Hara skyscraper. Mulled wine, sausages, ornaments. Open Christmas Eve &mdash; the final day before market closes Dec 25. Then take the elevator to the open-air Floating Garden Observatory, 173m up.</p>
-          <span class="tag tag-event">Christmas</span>
-          <div class="nyc-badge">&#9733; German Christmas market under a Japanese skyscraper</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; Christmas Eve Dinner</div>
-          <h4>Sushi Hara (Edo-mae omakase)</h4>
-          <p>Top Osaka sushi counter. 10-seat counter, 18-course omakase. Premium tuna, uni, anago. ~&yen;25,000-40,000/pp. Book 3+ weeks ahead.</p>
-          <span class="tag tag-food">Fine Dining</span>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 PM &mdash; Nightcap</div>
-          <h4>Bar Augusta Tarogawa &mdash; Speakeasy</h4>
-          <p>Hidden Osaka cocktail bar, decades-old, ice carved by hand. Christmas Eve nightcap.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#128646;</div>
-      <div class="route-text">Osaka &rarr; Kinosaki Onsen</div>
-      <div class="detail">Dec 25 morning &middot; JR Kinosaki Limited Express &middot; 2.5 hr direct, no transfers</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ KINOSAKI ═══════════════════ -->
-  <section class="city-section kinosaki-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--kinosaki-color);">Leg 3 of 5</div>
-        <h2>Kinosaki Onsen</h2>
-        <div class="city-dates">Dec 25 (Christmas Day) &middot; 1 Night &middot; 7-Bath Yukata Walk &amp; Snow Crab Kaiseki</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1559628233-100c798642d4?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--kinosaki-color);">1 NIGHT</div>
-        </div>
-        <div class="stay-info">
-          <h4>Nishimuraya Honkan</h4>
-          <p>Since 1861. 35 rooms, traditional sukiya-zukuri architecture. Member of <strong>Relais &amp; Ch&acirc;teaux</strong>. On the willow-lined canal in the heart of Kinosaki. Multi-course crab kaiseki + Tajima beef.</p>
-          <p class="stay-why">&ldquo;Christmas Day at a 165-year-old ryokan. Snow crab brought to your table. Wooden corridors, tatami, gas-lamp evening walks.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Kinosaki Day 7 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--kinosaki-color);">Day 7 &middot; Friday Dec 25 &middot; CHRISTMAS DAY</div></div>
-      <div class="day-title">Snow Crab Christmas at an 1861 Ryokan</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="Japanese onsen town">
-          <img src="https://images.unsplash.com/photo-1565895405138-6c3a1555da6a?w=600&q=80" alt="Snow crab">
-          <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Yukata Japan">
-        </div>
-        <div class="time-block">
-          <div class="time">9:00 AM</div>
-          <h4>JR Kinosaki Limited Express &mdash; Osaka to Kinosaki</h4>
-          <p>2.5-hour scenic ride through Hyogo countryside. Direct, no transfers. The train approaches Kinosaki along a small river lined with willows.</p>
+          <div class="nyc-badge">&#9733; Wearing 600-year-old royal dress at a royal palace in 2026 winter air</div>
         </div>
         <div class="time-block">
           <div class="time">12:00 PM</div>
-          <h4>Arrive Kinosaki &amp; Check In</h4>
-          <p>Walk 5 minutes from station to <strong>Nishimuraya Honkan</strong>. Kimono-clad staff greet you with welcome tea and seasonal sweets. Change into yukata (cotton robe) and geta (wooden clogs) provided by the ryokan.</p>
-          <span class="tag tag-unique">Luxury</span>
-        </div>
-        <div class="time-block">
-          <div class="time">1:30 PM &mdash; Lunch</div>
-          <h4>Daikichi &mdash; Crab Donburi</h4>
-          <p>Light lunch at a local kiosk before the kaiseki feast. Snow crab over rice, hand-shredded by the chef. Tajima beef croquette on the side.</p>
-          <span class="tag tag-food">Snack</span>
-          <div class="nyc-badge">&#9733; Snow crab fresh off the boat from the Sea of Japan</div>
-        </div>
-        <div class="time-block">
-          <div class="time">2:30 PM</div>
-          <h4>7-Bath Yukata Walk Begins</h4>
-          <p>Guests get free passes to all <strong>7 public bathhouses (sotoyu)</strong>. Walk between them in yukata + geta on snowy stone bridges. Each bath has a different theme:</p>
-          <p>&middot; <strong>Satonoyu</strong> (largest, with rotenburo outdoor bath) &middot; <strong>Goshonoyu</strong> (most beautiful, garden setting) &middot; <strong>Ichinoyu</strong> (cave bath) &middot; <strong>Mandara-yu</strong> (cylinder cypress tubs) &middot; <strong>Yanagi-yu</strong> (smallest, willow tree views) &middot; <strong>Jizo-yu</strong> (with Jizo Buddha statue) &middot; <strong>Kounoyu</strong> (the oldest, founded in the 6th century by a stork)</p>
-          <span class="tag tag-culture">Onsen</span>
-          <div class="nyc-badge">&#9733; Walking between 7 ancient public baths in winter yukata + clogs</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Christmas Dinner</div>
-          <h4>Snow Crab Kaiseki + Tajima Beef</h4>
-          <p>Multi-course kaiseki served in your tatami room. <strong>Whole snow crab</strong> presented live, then prepared 5+ ways: sashimi, grilled in shell, hotpot (kani-suki), tempura, rice gruel finish (zosui). Plus <strong>Tajima beef</strong> shabu-shabu &mdash; the original wagyu, before Kobe and Matsusaka cattle were bred from this stock. Sake from the Tajima region.</p>
-          <span class="tag tag-food">Fine Dining</span>
-          <div class="nyc-badge">&#9733; Whole snow crab kaiseki on Christmas Day at an 1861 ryokan. Possibly the trip&rsquo;s peak food moment.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:30 PM &mdash; Final Bath</div>
-          <h4>Late-Night Outdoor Soak Under Stars</h4>
-          <p>One final yukata walk to your favorite bath. Snow falling on the canal. Lantern reflections. The town quiets after 10 PM &mdash; just you, the willows, and the sound of geta on stone.</p>
-          <span class="tag tag-unique">Only here</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#128646;</div>
-      <div class="route-text">Kinosaki &rarr; Tokyo</div>
-      <div class="detail">Dec 26 morning &middot; JR Kinosaki Express + Tokaido Shinkansen via Osaka &middot; ~5.5 hr</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ TOKYO MIDDLE NIGHT ═══════════════════ -->
-  <section class="city-section tokyo-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--tokyo-color);">Leg 4 of 5</div>
-        <h2>Tokyo</h2>
-        <div class="city-dates">Dec 26 (Sat) &middot; 1 Night Transit &middot; Sushi Reset Before Senjyuan</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--tokyo-color);">3 NIGHTS</div>
-        </div>
-        <div class="stay-info">
-          <h4>Hoshinoya Tokyo</h4>
-          <p>The most authentically Japanese luxury hotel in Tokyo. <strong>17-floor vertical ryokan</strong> in Otemachi (financial district). 84 rooms across 14 floors, 6 per floor. All-tatami floors, woodblock keys, yukata-clad guests. <strong>Rooftop natural onsen</strong> pumped from 1,500m underground &mdash; the only proper onsen in central Tokyo. Each floor has its own ochanoma (traditional lounge) with snacks, tea, mochi 24/7. Hoshino Resorts.</p>
-          <p class="stay-why">&ldquo;A real ryokan inside Tokyo. Rooftop natural hot spring with the city below. Genuinely impossible-in-NYC luxury.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tokyo Day 8 (transit) -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--tokyo-color);">Day 8 &middot; Saturday Dec 26</div></div>
-      <div class="day-title">Kinosaki &rarr; Tokyo &mdash; Sushi Saito Saturday</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1564834744159-ff0ea41ba4b9?w=600&q=80" alt="Sushi counter">
-          <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=600&q=80" alt="Tokyo at night">
-          <img src="https://images.unsplash.com/photo-1551918120-9739cb430c6d?w=600&q=80" alt="Forest hotel view">
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 AM</div>
-          <h4>Final Kinosaki Bath &amp; Breakfast</h4>
-          <p>Sunrise yukata walk to one last bath. Multi-course Japanese breakfast served in your tatami room: grilled fish, miso soup, pickles, rice, dashimaki tamago.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">10:30 AM &mdash; Travel Day</div>
-          <h4>Train Kinosaki &rarr; Tokyo (5.5 hr)</h4>
-          <p>JR Kinosaki Limited Express to Osaka (2.5 hr) &rarr; Tokaido Shinkansen Osaka to Tokyo (3 hr). Bento boxes from the station. Mt. Fuji views from the right side of the Shinkansen if clear.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">4:30 PM &mdash; Arrive Tokyo</div>
-          <h4>Check Into Hoshinoya Tokyo</h4>
-          <p>Otemachi vertical ryokan. Yukata, slippers, woodblock key. First soak in the rooftop natural onsen with the Tokyo skyline above the steam.</p>
-          <span class="tag tag-unique">Ryokan in Tokyo</span>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; Dinner</div>
-          <h4>Sushi Yoshitake (Ginza, 9th Floor)</h4>
-          <p>Chef Masahiro Yoshitake&rsquo;s Edomae omakase. Held 3 Michelin stars 2012-2023, dropped to 2 in 2024 (chef&rsquo;s NYC expansion split focus). Still genuinely elite &mdash; tuna from the same Tsuetake supplier as Sushi Saito. <strong>Bookable directly via sushi-yoshitake.com.</strong> 25-30 pieces nigiri + appetizers, ~&yen;60-80K/pp.</p>
-          <span class="tag tag-food">Fine Dining</span>
-          <div class="nyc-badge">&#9733; Edomae sushi at the elite tier &mdash; and unlike Saito, you can actually book it.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">10:30 PM &mdash; Nightcap</div>
-          <h4>Hoshinoya Rooftop Onsen Soak</h4>
-          <p>Back at the hotel. Slip into yukata. Take the elevator to the 17th-floor rooftop. Natural hot spring water, open-to-the-sky bath, Tokyo skyline above the steam. December = perfect bath weather.</p>
-          <div class="nyc-badge">&#9733; Rooftop natural onsen in central Tokyo. Nothing like it.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#128646;</div>
-      <div class="route-text">Tokyo &rarr; Bettei Senjyuan</div>
-      <div class="detail">Dec 27 morning &middot; Joetsu Shinkansen to Jomo-Kogen + 25-min ryokan shuttle &middot; ~2 hr door-to-door</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ BETTEI SENJYUAN ═══════════════════ -->
-  <section class="city-section senjyuan-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--senjyuan-color);">Leg 5 of 5</div>
-        <h2>Bettei Senjyuan</h2>
-        <div class="city-dates">Dec 27 (Sun) &middot; 1 Night &middot; Private Stone Onsen + Joshu Beef Kaiseki</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--senjyuan-color);">1 NIGHT</div>
-        </div>
-        <div class="stay-info">
-          <h4>Bettei Senjyuan, Minakami</h4>
-          <p><strong>Relais &amp; Ch&acirc;teaux.</strong> 18 rooms only. <strong>Every room has a private outdoor stone onsen</strong> with garden/forest views. Multi-course kaiseki dinner featuring Joshu beef + Mt. Tanigawa river fish. Sake library with 100+ varieties.</p>
-          <p class="stay-why">&ldquo;Snow falling on your private stone bath. Forest silence. The platonic ideal of luxury Japanese winter onsen.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Senjyuan Day 9 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--senjyuan-color);">Day 9 &middot; Sunday Dec 27</div></div>
-      <div class="day-title">Mountain Forest Onsen &amp; Joshu Beef</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80" alt="Onsen in snow">
-          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80" alt="Wagyu beef">
-          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="Ryokan tatami">
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 AM</div>
-          <h4>Joetsu Shinkansen &mdash; Tokyo to Jomo-Kogen</h4>
-          <p>~80 minutes from Tokyo Station, north into the Gunma mountains. Tunnels through the Mt. Tanigawa range. Then 25-min shuttle to the ryokan (the ryokan picks up at the station).</p>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM</div>
-          <h4>Check In to Senjyuan</h4>
-          <p>Greeted by name at the entrance. Welcome tea + Wagashi seasonal sweet. Tour of your room: a private outdoor stone onsen surrounded by forest, just outside your sliding door. The bath fills automatically and never empties &mdash; soak whenever you want.</p>
-          <span class="tag tag-unique">Luxury</span>
-          <div class="nyc-badge">&#9733; Your own private outdoor onsen, 24/7, all to yourself</div>
-        </div>
-        <div class="time-block">
-          <div class="time">1:30 PM &mdash; Light Lunch</div>
-          <h4>Joshu Beef Soba in Minakami Town</h4>
-          <p>Optional 10-min taxi to Minakami town for a regional specialty: <strong>handmade soba topped with seared Joshu beef</strong> (Gunma&rsquo;s premium wagyu). Or stay at the ryokan for a light kaiseki lunch in your room.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-        <div class="time-block">
-          <div class="time">3:00 PM &mdash; Sake Library</div>
-          <h4>The Senjyuan Sake Tasting Room</h4>
-          <p>The ryokan&rsquo;s library lounge has <strong>100+ Gunma sake</strong>, free for guests during designated hours. The staff sommelier guides you through a flight of regional brews you cannot get anywhere else.</p>
-          <span class="tag tag-food">Drink</span>
-        </div>
-        <div class="time-block">
-          <div class="time">4:30 PM &mdash; Long Soak</div>
-          <h4>Private Onsen Sunset Bath</h4>
-          <p>Back to your room. Snow on the cedars outside the bath. Steam rising. Glass of sake on the rim of the stone tub. This is the moment.</p>
-          <div class="nyc-badge">&#9733; Snow falling on a private outdoor stone bath in deep mountain Japan</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Dinner</div>
-          <h4>Multi-Course Joshu Beef Kaiseki</h4>
-          <p>Served in a private dining room overlooking the inner garden (illuminated). 9-12 courses: amuse, otsukuri sashimi, simmered, charcoal-grilled Joshu beef, Mt. Tanigawa river fish, claypot rice, miso soup, seasonal dessert. Each course paired with a Gunma sake.</p>
-          <span class="tag tag-food">Fine Dining</span>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 PM &mdash; Night Bath</div>
-          <h4>Stars Above the Onsen</h4>
-          <p>Senjyuan is in the mountains, well outside city light pollution. On clear December nights the Milky Way stretches over the cedars. One last private soak before bed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#128646;</div>
-      <div class="route-text">Bettei Senjyuan &rarr; Tokyo</div>
-      <div class="detail">Dec 28 morning &middot; Shuttle + Joetsu Shinkansen &middot; ~2 hr</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ TOKYO FINAL ═══════════════════ -->
-  <section class="city-section tokyo-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--tokyo-color);">Tokyo Finale</h2>
-        <h2>Tokyo</h2>
-        <div class="city-dates">Dec 28 (Mon) &ndash; Dec 30 (Wed AM) &middot; 2 Final Nights &middot; Azabudai + teamLab + Farewell</div>
-      </div>
-    </div>
-
-    <!-- Tokyo Day 10 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--tokyo-color);">Day 10 &middot; Monday Dec 28</div></div>
-      <div class="day-title">Azabudai Hills &amp; teamLab Borderless</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80" alt="Tokyo skyline">
-          <img src="https://images.unsplash.com/photo-1547126412-4f5c0bcad7be?w=600&q=80" alt="teamLab digital art">
-          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80" alt="Wagyu fine dining">
-        </div>
-        <div class="time-block">
-          <div class="time">8:00 AM</div>
-          <h4>Final Senjyuan Onsen + Breakfast &rarr; Tokyo</h4>
-          <p>Sunrise private bath. Multi-course breakfast in your suite. Shuttle + Shinkansen back to Tokyo (~2 hr door-to-door). Arrive Tokyo Station around midday.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">1:00 PM &mdash; Lunch + What&rsquo;s New</div>
-          <h4>Azabudai Hills (Opened Nov 2023)</h4>
-          <p><strong>Tokyo&rsquo;s tallest building (330m)</strong> &mdash; brand-new since your last visit. The Mori JP Tower has top-floor restaurants, the Aman Residences, and the new <strong>Hills House Azabudai</strong> shopping. Have a long lunch at <strong>Glo</strong> (modern French) or <strong>Ginza Ono</strong> (kaiseki).</p>
-          <span class="tag tag-unique">New 2023</span>
-          <div class="nyc-badge">&#9733; Tokyo&rsquo;s tallest building, opened Nov 2023</div>
-        </div>
-        <div class="time-block">
-          <div class="time">3:00 PM &mdash; The Big Reopen</div>
-          <h4>teamLab Borderless (Reopened Feb 2024 in Azabudai)</h4>
-          <p>The team Lab digital-art museum relocated to Azabudai Hills in 2024 &mdash; completely redesigned, brand-new installations, larger footprint. Immersive, walk-through digital art. ~3 hours of wandering. Buy timed tickets ahead.</p>
-          <span class="tag tag-culture">Art</span>
-          <div class="nyc-badge">&#9733; teamLab Borderless reopened in Azabudai Feb 2024 &mdash; you cannot have seen this version before</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Pre-dinner Drink</div>
-          <h4>SG Club, Shibuya</h4>
-          <p>Shingo Gokan&rsquo;s top-rated cocktail bar (Asia&rsquo;s 50 Best Bars). 2 floors: &ldquo;Sip&rdquo; (refined) and &ldquo;Guzzle&rdquo; (lively). Order whatever the bartender suggests.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">8:30 PM &mdash; Dinner</div>
-          <h4>Den &#11088;&#11088; (2 Michelin + Green Star)</h4>
-          <p>Chef Zaiyu Hasegawa&rsquo;s playful modern kaiseki, recently relocated to <strong>Jingumae near Harajuku</strong> (2-3-18 Jingumae, Shibuya). Famous &ldquo;DenTucky Fried Chicken&rdquo; opener. Asia&rsquo;s 50 Best Restaurants top 25 (was #1 in 2022). <strong>Phone-only booking 2 months ahead</strong> &mdash; +81 3-6455-5433, Mon-Sat 12-5pm JST. Hasegawa refuses online platforms.</p>
-          <span class="tag tag-food">Fine Dining</span>
-          <div class="nyc-badge">&#9733; Asia&rsquo;s 50 Best top-25 restaurant. Phone-only booking, dial the moment lines open.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tokyo Day 11 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--tokyo-color);">Day 11 &middot; Tuesday Dec 29</div></div>
-      <div class="day-title">Final Tokyo Day &mdash; Tsukiji, Aoyama, Farewell</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1567337710282-00832b415979?w=600&q=80" alt="Tsukiji market">
-          <img src="https://images.unsplash.com/photo-1554797589-7241bb691973?w=600&q=80" alt="Tokyo street">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Final dinner plate">
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 AM</div>
-          <h4>Tsukiji Outer Market Breakfast</h4>
-          <p>The wholesale auction moved to Toyosu, but the Outer Market still has hundreds of stalls and small restaurants. Breakfast: <strong>uni don</strong> at Sushidai or Daiwa Sushi-style queue. Tamagoyaki skewer at Yamacho. Toro hand roll at Maguro Donya Miuramisakikou.</p>
-          <span class="tag tag-food">Breakfast</span>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 AM</div>
-          <h4>Aoyama / Omotesando / Daikanyama</h4>
-          <p>Best Tokyo neighborhoods for design + small-shop browsing. Comme des Gar&ccedil;ons headquarters. Prada Aoyama (Herzog &amp; de Meuron). Tsutaya Bookstore in Daikanyama (the most beautiful bookstore in the world per CNN). Coffee at Onibus or Streamer.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">1:00 PM &mdash; Lunch</div>
-          <h4>Hirakawa Soba</h4>
-          <p>Hidden soba shop near Roppongi. Hand-cut buckwheat noodles, served cold even in winter (with hot dipping broth). One of the city&rsquo;s top soba spots.</p>
-          <span class="tag tag-food">Food</span>
-        </div>
-        <div class="time-block">
-          <div class="time">3:00 PM &mdash; Hotel Spa</div>
-          <h4>Hoshinoya Slow Afternoon</h4>
-          <p>Back at the hotel. Final pack-out. Last rooftop onsen soak. Tea + mochi at the floor ochanoma lounge. Quiet ryokan ritual before the farewell dinner.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; Farewell Dinner</div>
-          <h4>Floril&egrave;ge &#11088;&#11088; (2 Michelin + Green Star)</h4>
-          <p>Chef Hiroyasu Kawate&rsquo;s modern French, <strong>relocated September 2023 to Azabudai Hills</strong> (entire 2nd floor of Garden Plaza, next to Nishikubo Hachiman Shrine). Asia&rsquo;s 50 Best #31, World&rsquo;s 50 Best #36. New concept post-move: 13-meter communal table, plant-forward menu, vegetable-driven. Bookable via Tableall + direct (aoyama-florilege.jp).</p>
-          <span class="tag tag-food">Fine Dining</span>
-          <div class="nyc-badge">&#9733; Florilège relocated to Azabudai 2023 &mdash; the new dining room is genuinely new</div>
-        </div>
-        <div class="time-block">
-          <div class="time">10:30 PM &mdash; Last Drink</div>
-          <h4>Bar Benfiddich, Shinjuku</h4>
-          <p>Hideyuki Ueno&rsquo;s herb-and-mortar speakeasy. Bartender grinds his own bitters, infuses his own liqueurs. Asia&rsquo;s best cocktail bar. The proper closer.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tokyo Day 12 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--tokyo-color);">Day 12 &middot; Wednesday Dec 30</div></div>
-      <div class="day-title">Depart Tokyo &rarr; JFK</div>
-      <div class="day-card-body">
-        <div class="time-block">
-          <div class="time">Morning</div>
-          <h4>Final Breakfast + Airport</h4>
-          <p>Onigiri + miso soup at the hotel. Narita Express or Limousine Bus to NRT (90 min) or HND (45 min) depending on flight. ANA, JAL, United, Delta all fly direct to JFK in ~13 hrs.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div style="height: 2rem;"></div>
-
-  <div class="footer">
-    <div class="footer-route">Plan A &middot; JFK &rarr; ICN &rarr; KIX &rarr; Kinosaki &rarr; Tokyo &rarr; Senjyuan &rarr; Tokyo &rarr; JFK</div>
-    <div class="footer-note">Winter Brothers 2026 &middot; Plan A &middot; Seoul + Japan</div>
-  </div>
-</div>
-
-</div><!-- end Plan A -->
-
-
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<!-- ═══════════════════ PLAN B: SEOUL + TAIPEI + HK ═══════════════════ -->
-<!-- ═══════════════════════════════════════════════════════════════════ -->
-<div id="asia-content" class="tab-content">
-
-<div class="content">
-
-  <!-- Plan B route pills -->
-  <div class="route-visual">
-    <span class="route-city pill-seoul">Seoul<span class="route-nights">4 N</span></span>
-    <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-taipei">Taipei<span class="route-nights">2 N</span></span>
-    <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-osaka" style="background:#8B6914; color:white;">Jiufen<span class="route-nights">1 N</span></span>
-    <span class="route-arrow">&rarr;</span>
-    <span class="route-city pill-hk">Hong Kong<span class="route-nights">4 N</span></span>
-  </div>
-
-  <!-- Plan B stats -->
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-num" style="color:var(--seoul-color)">11</div><div class="stat-label">Nights</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--taipei-color)">4</div><div class="stat-label">Cities</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--hk-color)">4</div><div class="stat-label">Hotels</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--osaka-color)">5+</div><div class="stat-label">Night Markets</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:var(--tokyo-color)">5+</div><div class="stat-label">Michelin Stars</div></div>
-    <div class="stat-card"><div class="stat-num" style="color:#ffc312">0</div><div class="stat-label">NYC Repeats</div></div>
-  </div>
-
-  <!-- Plan B season -->
-  <div class="season-header">
-    <h2>What&rsquo;s In Season</h2>
-    <p>December 19 &ndash; 30, 2026</p>
-  </div>
-  <div class="season-grid">
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(230,57,70,0.12);">&#127870;</div>
-      <div><h4 style="color:var(--seoul-color)">Seoul Samgyetang Season</h4><p>Same Seoul as Plan A. Winter ginseng chicken soup, palace snow, jjimjilbang weather.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(42,157,143,0.12);">&#127836;</div>
-      <div><h4 style="color:var(--taipei-color)">Taipei Hot Pot &amp; Night Markets</h4><p>December = mild 15-22&deg;C, perfect for night-market grazing. Beef noodle soup, hot pot, oyster omelette weather.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(199,125,56,0.12);">&#127881;</div>
-      <div><h4 style="color:var(--hk-color)">Hong Kong WinterFest</h4><p>Statue Square Christmas market, Symphony of Lights Christmas overlay, Causeway Bay Times Square illumination, ICC light show.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(199,125,56,0.12);">&#129382;</div>
-      <div><h4 style="color:var(--hk-color)">Cantonese Hot-Pot Weather</h4><p>Cool dry HK December = peak hot pot, claypot rice, snake soup, winter-melon broths.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(42,157,143,0.12);">&#127914;</div>
-      <div><h4 style="color:var(--taipei-color)">Taipei Christmas Lights</h4><p>Banqiao Christmasland (Asia&rsquo;s biggest Christmas light display, runs Nov-Jan). Xinyi District luxury malls all decorated.</p></div>
-    </div>
-    <div class="season-card">
-      <div class="season-icon" style="background:rgba(230,57,70,0.12);">&#9832;</div>
-      <div><h4 style="color:var(--seoul-color)">Korean Bathhouse Weather</h4><p>Same as Plan A. Jjimjilbang is the cultural keystone of a Korea winter trip.</p></div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════ SEOUL (same as Plan A, condensed) ═══════════════════ -->
-  <section class="city-section seoul-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1534274867514-d5b47ef89ed7?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--seoul-color);">Leg 1 of 3</div>
-        <h2>Seoul</h2>
-        <div class="city-dates">Dec 19 (Sat) &ndash; Dec 23 (Wed AM) &middot; 4 Nights &middot; Same as Plan A</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--seoul-color);">4 NIGHTS</div>
-        </div>
-        <div class="stay-info">
-          <h4>Signiel Seoul</h4>
-          <p>Identical to Plan A. Floors 76&ndash;101 of Lotte World Tower. The same 4-night itinerary applies: Day 1 Myeongdong arrival, Day 2 palaces + Gwangjang, Day 3 Bongeunsa + jjimjilbang + chimaek, Day 4 Suwon UNESCO + Mingles.</p>
-          <p class="stay-why">&ldquo;See Plan A for the full 4-day Seoul itinerary &mdash; identical between plans.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Days 1&ndash;4 &middot; Dec 19&ndash;22</div></div>
-      <div class="day-title">Same Seoul Itinerary as Plan A</div>
-      <div class="day-card-body">
-        <p style="color:var(--text-mid); font-size:0.85rem; line-height:1.7; margin: 0.5rem 0;">
-          <strong>Day 1 (Sat Dec 19):</strong> Arrive afternoon. Cheonggyecheon stream + Myeongdong street food + pojangmacha tent bar.<br><br>
-          <strong>Day 2 (Sun Dec 20):</strong> Tosokchon samgyetang &rarr; Gyeongbokgung + hanbok &rarr; Bukchon &rarr; Gwangjang Market &rarr; Changdeokgung Secret Garden (UNESCO) &rarr; tea house &rarr; Korean BBQ.<br><br>
-          <strong>Day 3 (Mon Dec 21):</strong> Namdaemun &rarr; Bongeunsa Temple &rarr; Ikseon-dong &rarr; jokbal &rarr; Siloam jjimjilbang + sauna eggs &rarr; Hongdae chimaek crawl.<br><br>
-          <strong>Day 4 (Tue Dec 22):</strong> KTX to Suwon &rarr; Hwaseong Fortress (UNESCO) &rarr; Yeonpo Galbi (1945) &rarr; Korean Folk Village &rarr; back to Seoul &rarr; Mingles 3-Michelin farewell dinner.
-        </p>
-        <span class="tag tag-culture">See Plan A</span>
-      </div>
-    </div>
-
-    <div class="flight-divider">
-      <div class="plane">&#9992;&#65039;</div>
-      <div class="route-text">Seoul &rarr; Taipei</div>
-      <div class="detail">Dec 23 &middot; Morning flight &middot; ~2.5 hr direct &middot; Korean Air, Asiana, EVA, China Airlines</div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════ TAIPEI ═══════════════════ -->
-  <section class="city-section taipei-section">
-    <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1470004914212-05527e49370b?w=1600&q=80');"></div>
-      <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--taipei-color);">Leg 2 of 4</div>
-        <h2>Taipei</h2>
-        <div class="city-dates">Dec 23 (Wed) &ndash; Dec 25 (Fri AM) &middot; 2 Nights &middot; Night Markets, Temples, Christmas City</div>
-      </div>
-    </div>
-
-    <div class="stays-row">
-      <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--taipei-color);">2 NIGHTS</div>
-        </div>
-        <div class="stay-info">
-          <h4>Mandarin Oriental Taipei</h4>
-          <p><strong>Michelin Key 2024.</strong> 303 rooms, in Songshan District near Taipei 101. Home to Michelin-starred <strong>Ya Ge</strong> (modern Cantonese). Old-world luxury &mdash; the gold-standard Taipei stay.</p>
-          <p class="stay-why">&ldquo;The benchmark for Taipei luxury. Walking distance to Xinyi malls and Christmasland.&rdquo;</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Taipei Day 5 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 5 &middot; Wednesday Dec 23</div></div>
-      <div class="day-title">Arrive Taipei &mdash; Night Market Baptism</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1529528070131-eda9f3e90919?w=600&q=80" alt="Taipei night market">
-          <img src="https://images.unsplash.com/photo-1555126634-323283e090fa?w=600&q=80" alt="Beef noodle soup">
-          <img src="https://images.unsplash.com/photo-1545893835-abaa50cbe628?w=600&q=80" alt="Longshan Temple">
-        </div>
-        <div class="time-block">
-          <div class="time">Morning</div>
-          <h4>Fly Seoul &rarr; Taipei TPE</h4>
-          <p>~2.5 hr direct. Express bus or MRT into the city. Check into Mandarin Oriental.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">2:00 PM &mdash; First Bowl</div>
-          <h4>Lin Dong Fang Beef Noodle Soup</h4>
-          <p>274 Bade Rd Sec 2. 30+ years. Medicinal-spice broth, fork-tender beef tendon. Your first proper Taipei meal.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Taiwanese beef noodle soup at one of Taipei&rsquo;s top spots</div>
-        </div>
-        <div class="time-block">
-          <div class="time">3:30 PM</div>
-          <h4>Longshan Temple (Built 1738)</h4>
-          <p>Taipei&rsquo;s oldest and most important temple. Incense thick in the courtyard, gold dragons, chanting monks. Local worshippers throwing divination blocks. Wanhua district atmosphere.</p>
-          <span class="tag tag-culture">Temple</span>
-        </div>
-        <div class="time-block">
-          <div class="time">5:00 PM &mdash; Wanhua Snack Walk</div>
-          <h4>Aiyu Jelly + Peanut Ice Cream Wraps</h4>
-          <p><strong>Aiyu jelly</strong> (lemon honey, made from a fig seed endemic to Taiwan&rsquo;s mountains &mdash; impossible elsewhere). <strong>Peanut ice cream wrap</strong> (shaved peanut candy + ice cream + cilantro in a thin crepe). <strong>Tian bu la</strong> (Taiwanese fishcake tempura).</p>
-          <span class="tag tag-food">Snack</span>
-          <div class="nyc-badge">&#9733; Aiyu jelly is made from a Taiwan-only fig seed. Genuinely impossible in NYC.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">6:30 PM &mdash; The Big One</div>
-          <h4>Raohe Night Market</h4>
-          <p><strong>Fuzhou black pepper buns</strong> (clay oven, the queue-it stall at the entrance). <strong>Lee Chi oyster omelette</strong> (Michelin Bib Gourmand). <strong>Herbal rib soup</strong> in a pot. <strong>Lao Yu Zai taro balls</strong> (since 1964). Then Songshan Cixiu Temple at the entrance lit up at night.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Black pepper buns straight from a clay oven. Not in NYC.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:00 PM &mdash; Late Night</div>
-          <h4>Hot Star Large Fried Chicken Cutlet</h4>
-          <p>Taiwan&rsquo;s national late-night snack. Bigger than your face, pounded thin, marinated in five-spice and garlic, double-fried until shattering crispy. Dust with chili powder and white pepper.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Taipei Day 6 - Christmas Eve in Taipei -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 6 &middot; Thursday Dec 24 &middot; CHRISTMAS EVE</div></div>
-      <div class="day-title">Mountain Tea, 101 Skywalk &amp; Christmasland</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e?w=600&q=80" alt="Fu Hang soy milk breakfast">
-          <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&q=80" alt="Tea ceremony Maokong">
-          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Christmas lights">
-        </div>
-        <div class="time-block">
-          <div class="time">5:30 AM &mdash; Yes, Really</div>
-          <h4>Fu Hang Soy Milk (Michelin Bib Gourmand)</h4>
-          <p>The most legendary breakfast in Taipei. Salty soy milk curdled with vinegar, thick crispy bread rolls, dan bing (egg crepes), fan tuan (sticky rice rolls). The line forms before sunrise. Fu Hang has been here since the 1960s.</p>
-          <span class="tag tag-food">Breakfast</span>
-          <div class="nyc-badge">&#9733; Salty soy milk breakfast tradition does not exist in NYC. The 6 AM line is a religion.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:30 AM</div>
-          <h4>Bao&rsquo;an Temple + Confucius Temple</h4>
-          <p><strong>Dalongdong Bao&rsquo;an Temple</strong> &mdash; widely considered Taipei&rsquo;s most beautiful temple (more so than Longshan), winner of <strong>UNESCO Asia-Pacific Heritage Award 2003</strong>. Spectacular dragon column carvings, painted ceiling, traditional folk craftsmanship. Across the street: <strong>Confucius Temple</strong> with its peaceful courtyard. Both quieter than Longshan and barely on tourist itineraries.</p>
-          <span class="tag tag-culture">Temple</span>
-          <div class="nyc-badge">&#9733; UNESCO-recognized temple craftsmanship in a working neighborhood</div>
-        </div>
-        <div class="time-block">
-          <div class="time">11:30 AM</div>
-          <h4>Chiang Kai-shek Memorial + Liberty Square</h4>
-          <p>The largest civic square in Taiwan, flanked by the National Theater and National Concert Hall. <strong>Changing of the guard ceremony every hour on the hour</strong> (8 AM-5 PM). Massive bronze CKS statue inside the memorial, lower-level history museum on Taiwan&rsquo;s 20th century.</p>
+          <h4>Bukchon Hanok Village Walk</h4>
+          <p>900 preserved Joseon-era hanok houses on a hillside between two palaces. Walk the alleys. Stop at <strong>Cafe Onion</strong> for traditional Korean rice cake + coffee in a converted hanok.</p>
           <span class="tag tag-culture">Culture</span>
         </div>
         <div class="time-block">
-          <div class="time">1:30 PM &mdash; Lunch</div>
-          <h4>Yongkang Street &mdash; Din Tai Fung Original</h4>
-          <p>Taipei&rsquo;s most famous food street. <strong>Din Tai Fung original location</strong> on Xinyi Rd for xiao long bao (the actual 1958 original). Plus <strong>Smoothie House mango shaved ice</strong> next door.</p>
+          <div class="time">1:30 PM</div>
+          <h4>Lunch: Tosokchon Samgyetang</h4>
+          <p>The most famous samgyetang (ginseng chicken soup) in Korea. Whole young chicken, stuffed with sweet rice, ginseng, jujube. 90-minute lines &mdash; or skip line as foreign-tour walk-in. Hot soup, cold December air. Quintessential.</p>
           <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; The original 1958 Din Tai Fung &mdash; where the modern xiao long bao was perfected</div>
-        </div>
-        <div class="time-block">
-          <div class="time">2:30 PM</div>
-          <h4>Songshan Cultural &amp; Creative Park</h4>
-          <p>1937 Japanese-era tobacco factory, converted in 2011 into Taipei&rsquo;s top design space. Rotating exhibitions (Taiwanese illustrators, contemporary art), independent bookshops, design boutiques, the Taiwan Design Museum. Walk the lily pond + warehouse galleries.</p>
-          <span class="tag tag-culture">Design</span>
         </div>
         <div class="time-block">
           <div class="time">3:00 PM</div>
-          <h4>Taipei 101 Skyline 460</h4>
-          <p>Outdoor skywalk around the EXTERIOR of the 101st floor at <strong>460 meters</strong>. Open-air harness experience. NT$3,000/pp. Genuinely thrilling. Then ride the world&rsquo;s former-fastest elevator down to Xinyi.</p>
-          <span class="tag tag-unique">Adrenaline</span>
-          <div class="nyc-badge">&#9733; Open-air skywalk on the OUTSIDE of Taipei 101 at 460m</div>
+          <h4>Changdeokgung Secret Garden Tour</h4>
+          <p>UNESCO World Heritage Site. The Huwon (Secret Garden) only accessible by reserved guided tour. 78 acres of pavilions, ponds, ancient trees inside a king&rsquo;s back garden. Reserve 6 weeks ahead.</p>
+          <span class="tag tag-culture">Culture</span>
         </div>
         <div class="time-block">
-          <div class="time">5:30 PM</div>
-          <h4>Banqiao Christmasland (Christmas Eve)</h4>
-          <p>Taiwan&rsquo;s biggest Christmas light display. <strong>Asia&rsquo;s most iconic Christmas illumination event.</strong> 30+ million lights, projection mapping on the Banqiao government building, parade. Runs Nov-Jan, peak on Christmas Eve. 30-min MRT from the city.</p>
-          <span class="tag tag-event">Christmas Eve</span>
-          <div class="nyc-badge">&#9733; Asia&rsquo;s biggest Christmas light show on Christmas Eve. Genuinely once a year.</div>
+          <div class="time">6:00 PM</div>
+          <h4>Gwangjang Market &mdash; Korea&rsquo;s Greatest Food Market</h4>
+          <p><strong>Bindaetteok</strong> (mung bean pancake, ground fresh on stone), <strong>yukhoe</strong> (Korean steak tartare with raw egg yolk + Asian pear), <strong>mayak gimbap</strong> (&ldquo;drug seaweed roll&rdquo;), <strong>tteokbokki</strong>, <strong>kalguksu</strong>. Bourdain&rsquo;s favorite Asian market.</p>
+          <span class="tag tag-food">Food</span>
         </div>
         <div class="time-block">
-          <div class="time">8:30 PM &mdash; Christmas Eve Dinner</div>
-          <h4>RAW &#11088;&#11088; (2 Michelin Stars)</h4>
-          <p>Chef Andr&eacute; Chiang&rsquo;s modern Taiwanese tasting menu. Asia&rsquo;s 50 Best Restaurants. Single seasonal menu, immersive presentation. Christmas Eve special menu. Book 2-3 months ahead via online lottery.</p>
-          <span class="tag tag-food">Fine Dining</span>
-        </div>
-        <div class="time-block">
-          <div class="time">11:00 PM &mdash; Late Night</div>
-          <h4>Hot Star Large Fried Chicken</h4>
-          <p>Walk Ningxia or Shilin Night Market on the way back. Taiwan&rsquo;s national late-night snack &mdash; bigger than your face, pounded thin, marinated in five-spice and garlic, double-fried until shattering crispy.</p>
-          <span class="tag tag-food">Snack</span>
+          <div class="time">10:00 PM</div>
+          <h4>Mingles &mdash; 3-Michelin-Star New Korean</h4>
+          <p>Chef Mingoo Kang. 7-course modern Korean tasting. 3 Michelin stars 2024. Asia&rsquo;s Best Restaurant runner-up. Korean fermentation reimagined &mdash; jang trio, hwachae, gat (mustard greens). Book 3 months out.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-event">Event</span>
         </div>
       </div>
     </div>
 
-    <div class="flight-divider">
-      <div class="plane">&#128663;</div>
-      <div class="route-text">Taipei &rarr; Jiufen</div>
-      <div class="detail">Dec 25 afternoon &middot; Private car ~1 hr northeast through Keelung mountains</div>
+    <!-- Seoul Day 3 - Day Trip to Suwon -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 3 &middot; Wednesday Dec 23</div></div>
+      <div class="day-title">Day Trip: Suwon Hwaseong &mdash; UNESCO Wall &amp; Korean BBQ Origin</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1605648916361-9bc12ad6a569?w=600&q=80" alt="Suwon Hwaseong Fortress">
+          <img src="https://images.unsplash.com/photo-1583224994076-ae40c7c5b2d2?w=600&q=80" alt="Korean BBQ galbi">
+          <img src="https://images.unsplash.com/photo-1626197031507-c17099753214?w=600&q=80" alt="Korean folk village">
+        </div>
+        <div class="time-block">
+          <div class="time">7:00 AM</div>
+          <h4>Breakfast: Isaac Toast in the Lobby</h4>
+          <p>Korean toast sandwich chain. Buttery griddled bread, ham, egg, cabbage, sweet-savory sauce. Eaten standing on the way to the train.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">8:30 AM</div>
+          <h4>KTX to Suwon (30 min)</h4>
+          <p>Bullet train from Seoul Station. The single best half-day trip from Seoul.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">9:30 AM</div>
+          <h4>Hwaseong Fortress &mdash; UNESCO World Heritage</h4>
+          <p>5.7km of 1796 fortress wall, an architectural masterpiece commissioned by King Jeongjo for his father&rsquo;s exiled tomb. Walk the full circumference (~2 hrs). 48 watchtowers, command posts, secret gates. Take the trackless trolley if energy fades.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-nature">Nature</span>
+          <div class="nyc-badge">&#9733; A complete intact 18th-century walled city &mdash; nothing like it in the US</div>
+        </div>
+        <div class="time-block">
+          <div class="time">1:00 PM</div>
+          <h4>Lunch: Yeonpo Galbi &mdash; Korean BBQ Origin</h4>
+          <p>Suwon is the literal origin of Korean galbi (marinated short rib). Yeonpo Galbi is the most famous galbi restaurant in Korea, opened 1945. Family-style. Charcoal grill at your table. Order <strong>Suwon wang galbi</strong> &mdash; king-cut. Lettuce wrap, raw garlic, ssamjang.</p>
+          <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; This is where Korean BBQ began. Tasting the original is impossible anywhere outside Suwon.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">3:00 PM</div>
+          <h4>Korean Folk Village</h4>
+          <p>200+ traditional buildings reassembled on a hillside. Live performances: farmer&rsquo;s dance with twirling streamers, equestrian acrobatics, tightrope. The set for K-dramas like &ldquo;Mr. Sunshine.&rdquo; A bus or short taxi from central Suwon.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">6:00 PM</div>
+          <h4>KTX Back to Seoul</h4>
+          <p>30 minutes back. Head to the hotel for a quick shower.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">8:00 PM</div>
+          <h4>Dinner: Onjium &mdash; Royal Cuisine Tasting</h4>
+          <p>1-Michelin-star Korean royal court cuisine inside a hanok next to Gyeongbokgung. Joseon-era recipes researched by the Onjium Foundation. Different from Mingles &mdash; this is tradition, not innovation.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">11:00 PM</div>
+          <h4>Norebang (Korean Karaoke)</h4>
+          <p>Private room, soju, K-pop song book. The most Korean way to end a night. Su Norebang in Gangnam has the best private rooms.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Seoul Day 4 - Christmas Eve -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--seoul-color);">Day 4 &middot; Thursday Dec 24 &middot; CHRISTMAS EVE</div></div>
+      <div class="day-title">Christmas Eve Seoul &mdash; Temple, Jjimjilbang, Chimaek</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=600&q=80" alt="Bongeunsa Temple">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Korean jjimjilbang">
+          <img src="https://images.unsplash.com/photo-1606851094291-6efae152bb87?w=600&q=80" alt="Korean fried chicken chimaek">
+        </div>
+        <div class="time-block">
+          <div class="time">6:30 AM</div>
+          <h4>Jaha Sonmandu Mountain Breakfast</h4>
+          <p>Mandu (handmade Korean dumplings) at the foot of Bukhansan Mountain. North Korean refugee recipe. Steamy beef &amp; vegetable dumplings, kimchi dumpling soup, the broth thick from bone stock. Open 7 AM. Quietly the best mandu in Seoul.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">9:00 AM</div>
+          <h4>Bongeunsa Temple &mdash; Buddhist in Gangnam</h4>
+          <p>1,200-year-old Buddhist temple right next to COEX Mall. Massive 23m standing Buddha. Free Temple Stay program. The juxtaposition &mdash; chanting monks against a Hyundai luxury mall &mdash; is pure Seoul.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">11:00 AM</div>
+          <h4>Starfield Library at COEX</h4>
+          <p>13m-tall wall-to-wall bookshelves, 50,000 books, the most Instagrammed library in Asia. Massive Christmas tree installation in the central atrium.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-event">Event</span>
+        </div>
+        <div class="time-block">
+          <div class="time">1:00 PM</div>
+          <h4>Gangnam Underground Food Court</h4>
+          <p>Massive underground market beneath Gangnam Station. Korean comfort food: <strong>kalguksu</strong> (knife-cut noodle soup), <strong>kongguksu</strong>, <strong>kimchi-jjigae</strong>. This is where actual Seoul office workers eat.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">3:00 PM</div>
+          <h4>Siloam Sauna &mdash; Christmas Eve Jjimjilbang</h4>
+          <p>One of Seoul&rsquo;s great traditional bathhouses. Jade room, salt sauna, pine sauna, ice room, sleeping halls. Eat <strong>sauna eggs</strong> (slow-roasted in salt, peel and eat with peanuts) and drink <strong>sikhye</strong> (sweet rice drink) on the heated floor in a sheep-towel head-wrap.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; Christmas Eve at a 24-hour Korean bathhouse &mdash; pure Korea, impossible to replicate</div>
+        </div>
+        <div class="time-block">
+          <div class="time">6:30 PM</div>
+          <h4>Christmas Eve Dinner: Maple Tree House Yeonnam</h4>
+          <p>Top-tier Korean BBQ. Specializes in <strong>seol-deunshim</strong> (premium prime rib eye), <strong>geol-bi</strong> (charcoal-grilled marinated short rib). All cuts dry-aged. Side panchan is a meal in itself.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">9:00 PM</div>
+          <h4>Myeongdong Cathedral Christmas Eve Mass</h4>
+          <p>Seoul&rsquo;s 1898 Gothic Catholic cathedral. Midnight Mass attracts thousands. Even non-Catholic, the carolers in the plaza, the bell-tolling, the snow possibility &mdash; deeply atmospheric. Or just walk by, see the lights.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-event">Event</span>
+        </div>
+        <div class="time-block">
+          <div class="time">11:00 PM</div>
+          <h4>Chimaek (Chicken + Beer) at the Signiel 81 Bar</h4>
+          <p>Christmas Eve nightcap at the top of Lotte World Tower. KFC (Korean Fried Chicken) and Cass beer at 555m. Watch the city lit up for Christmas below you.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ JIUFEN ═══════════════════ -->
-  <section class="city-section taipei-section" style="--accent: #8B6914;">
+  <!-- Flight: Seoul → Taipei -->
+  <div class="flight-divider">
+    <div class="plane">&#9992;</div>
+    <div class="route-text">Seoul &rarr; Taipei</div>
+    <div class="detail">Dec 25 (Thu) &middot; CHRISTMAS DAY &middot; ICN 9:00 AM departure &middot; ~3h flight &middot; TPE mid-morning arrival</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ TAIPEI ═══════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="city-section taipei-section">
     <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?w=1600&q=80');"></div>
+      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1552939957-78ec6ab85e69?w=1600&q=80');"></div>
       <div class="city-hero-content">
-        <div class="city-badge" style="background:#8B6914;">Leg 3 of 4</div>
-        <h2>Jiufen</h2>
-        <div class="city-dates">Dec 25 (Christmas Day) &ndash; Dec 26 (Sat AM) &middot; 1 Night &middot; Lantern Mountain Village + Spirited Away</div>
+        <div class="city-badge" style="background:var(--taipei-color);">Leg 3 of 5</div>
+        <h2>Taipei</h2>
+        <div class="city-dates">Dec 25 (Thu) &ndash; Dec 28 (Sun AM) &middot; 3 Nights &middot; Night Markets, Temples, Jiufen</div>
       </div>
     </div>
 
     <div class="stays-row">
       <div class="stay-card">
-        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=800&q=80');">
-          <div class="nights-badge" style="background:#8B6914;">1 NIGHT</div>
+        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80');">
+          <div class="nights-badge" style="background:var(--taipei-color);">3 NIGHTS</div>
         </div>
         <div class="stay-info">
-          <h4>Wenshan Resort (or A-Mei Teahouse Inn)</h4>
-          <p>Traditional teahouse-style stay above Jiufen Old Street. Limited rooms (book 3+ months ahead). Mountain + sea views from your room. <strong>The day-trippers leave at 5-6 PM &mdash; you stay.</strong> Jiufen at night, almost empty, gas-lamp alleys, mist over the East China Sea. The version most travelers never see.</p>
-          <p class="stay-why">&ldquo;Christmas Day at the Spirited Away mountain village. Lantern-lit, misty, almost magical. Worth the detour.&rdquo;</p>
+          <h4>Mandarin Oriental Taipei</h4>
+          <p>303 rooms, Michelin Key 2024, in the Songshan district. The lobby is a 11m-high atrium. Three Michelin-starred restaurants including Coast (1 Michelin Star), Café Un Deux Trois. Sky-high indoor pool.</p>
+          <p class="stay-why">&ldquo;The grand dame of Taipei. The 24-hour gym is on a glass walkway over the lobby.&rdquo;</p>
         </div>
       </div>
     </div>
 
-    <!-- Day 7 - Jiufen Christmas Day -->
+    <!-- Taipei Day 1 - Christmas Day -->
     <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:#8B6914;">Day 7 &middot; Friday Dec 25 &middot; CHRISTMAS DAY</div></div>
-      <div class="day-title">Drive to the Mountain Village &mdash; Jiufen at Night</div>
+      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 1 &middot; Thursday Dec 25 &middot; CHRISTMAS DAY</div></div>
+      <div class="day-title">Christmas Day in Taipei &mdash; Christmasland Lights &amp; Din Tai Fung</div>
       <div class="day-card-body">
         <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1474524955719-b9f87c50ce47?w=600&q=80" alt="Jiufen lanterns">
-          <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?w=600&q=80" alt="Mountain teahouse">
-          <img src="https://images.unsplash.com/photo-1556881286-fc6915169721?w=600&q=80" alt="Tea ceremony Taiwan">
+          <img src="https://images.unsplash.com/photo-1552939957-78ec6ab85e69?w=600&q=80" alt="Taipei 101 Christmas lights">
+          <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?w=600&q=80" alt="Din Tai Fung xiaolongbao">
+          <img src="https://images.unsplash.com/photo-1568048689711-5e0325cea8c1?w=600&q=80" alt="Ningxia night market">
         </div>
         <div class="time-block">
-          <div class="time">8:00 AM &mdash; Final Taipei Breakfast</div>
-          <h4>Yong He Soy Milk King (Da&rsquo;an)</h4>
-          <p>Different soy milk than Fu Hang yesterday. The crispiest youtiao in Taipei, radish cake with egg, clay oven rolls, fresh xiao long bao (6-min wait). English menu. The proper Taipei Christmas Day farewell breakfast.</p>
-          <span class="tag tag-food">Breakfast</span>
+          <div class="time">12:00 PM</div>
+          <h4>Land TPE &rarr; Mandarin Oriental Taipei</h4>
+          <p>Land at Taoyuan. Private car to Mandarin Oriental (~45 min). Check in. Quick shower. The lobby tea is a service ritual &mdash; sit, accept the welcome.</p>
+          <span class="tag tag-unique">Only here</span>
         </div>
         <div class="time-block">
-          <div class="time">10:00 AM &mdash; Final Taipei Stop</div>
-          <h4>National Palace Museum</h4>
-          <p>The world&rsquo;s greatest collection of Chinese imperial art &mdash; 700,000+ pieces from the Forbidden City, evacuated to Taiwan in 1949. The Jadeite Cabbage. Ming dynasty bronzes. 3,000-year-old jade. <strong>This collection is impossible to see anywhere else on earth.</strong></p>
-          <span class="tag tag-culture">Culture</span>
-          <div class="nyc-badge">&#9733; The Forbidden City&rsquo;s greatest treasures, in Taipei</div>
+          <div class="time">2:00 PM</div>
+          <h4>Lunch: Din Tai Fung Original Branch (Xinyi Rd)</h4>
+          <p>The Michelin-starred original location of the world&rsquo;s greatest xiaolongbao (soup dumpling) restaurant. 18 perfectly-pleated folds per dumpling. <strong>Truffle xiaolongbao</strong>, <strong>shrimp shaomai</strong>, <strong>red oil wontons</strong>. The fold-counting is real &mdash; they count every one.</p>
+          <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; NYC Din Tai Fung is a chain. The Xinyi Rd. flagship is a sacred site for dumpling-craft.</div>
         </div>
         <div class="time-block">
-          <div class="time">2:00 PM &mdash; Drive Begins</div>
-          <h4>Private Car: Taipei &rarr; Jiufen (~1 hr)</h4>
-          <p>Drive northeast through the Keelung mountains. Climb the winding road up to the old gold-mining village perched above the Pacific. Drop bags at the inn.</p>
-          <span class="tag tag-culture">Transit</span>
+          <div class="time">4:00 PM</div>
+          <h4>Taipei 101 Observatory + Skyline Skywalk</h4>
+          <p>Taipei&rsquo;s 508m tower. 89th floor outdoor observatory. Optional <strong>Skyline 460 Skywalk</strong> &mdash; harnessed walk outside the 101st floor. Christmas decorations in the indoor mall (1F-5F).</p>
+          <span class="tag tag-event">Event</span>
         </div>
         <div class="time-block">
-          <div class="time">3:30 PM &mdash; Jiufen Old Street Snack Crawl</div>
-          <h4>Taro Balls, Iron Eggs, Mochi, Peanut Ice Cream</h4>
-          <p>The Old Street &ldquo;Jishan Street&rdquo; is the village&rsquo;s vertical food alley. <strong>Ah Gan Taro Balls</strong> (the #1 Jiufen snack &mdash; chewy taro/sweet potato balls in red bean soup). <strong>Ah Lan Herbal Mochi</strong> (grass jelly rice cakes). <strong>Jiufen iron eggs</strong> (braised + air-dried until intensely chewy and dark). <strong>Peanut ice cream rolls</strong> (shaved peanut candy + ice cream + cilantro in a thin crepe). Eat your way down the mountain.</p>
-          <span class="tag tag-food">Snack</span>
-          <div class="nyc-badge">&#9733; A whole vertical alley of single-dish snack specialists. Pure Jiufen.</div>
+          <div class="time">7:00 PM</div>
+          <h4>Banqiao Christmasland &mdash; Asia&rsquo;s Biggest Christmas Festival</h4>
+          <p>30M LED lights, projection mapping on Banqiao City Hall, themed light tunnels (this year: K-pop, anime, classic Christmas). Runs Nov-early Jan. Free entry. December 25 = the peak crowd-energy night.</p>
+          <span class="tag tag-event">Event</span><span class="tag tag-culture">Culture</span>
+          <div class="nyc-badge">&#9733; A Christmas light festival of this scale doesn&rsquo;t exist in the US</div>
         </div>
         <div class="time-block">
-          <div class="time">5:30 PM &mdash; THE Moment</div>
-          <h4>A-Mei Teahouse at Sunset (Spirited Away)</h4>
-          <p>The iconic 4-story wooden teahouse with red lanterns &mdash; the building Hayao Miyazaki said inspired the bathhouse in <em>Spirited Away</em>. <strong>Sit on the upper balcony at 5-6 PM</strong> as the day-trippers descend, the lanterns light up, mist rolls in over the East China Sea. Order Tieguanyin or Oriental Beauty oolong, served in a multi-piece traditional Taiwanese tea ceremony set with snacks.</p>
-          <span class="tag tag-culture">Iconic</span>
-          <div class="nyc-badge">&#9733; The actual Spirited Away teahouse, lanterns lit, sea mist, day-trippers gone</div>
+          <div class="time">9:30 PM</div>
+          <h4>Ningxia Night Market Snack Crawl</h4>
+          <p><strong>Liu Yu Zai</strong> (oyster vermicelli &mdash; the most awarded stall), <strong>Lai Ji</strong> (fried taro balls), <strong>Yuan Huan Bian</strong> (oyster omelet), <strong>fan tuan</strong> (egg + youtiao + meat-floss inside sticky rice). Walk it slow.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
         </div>
         <div class="time-block">
-          <div class="time">7:30 PM &mdash; Christmas Day Dinner</div>
-          <h4>Jioufen Teahouse Restaurant or Inn Kaiseki</h4>
-          <p>Dinner at the inn (small kaiseki-style multi-course) or at <strong>Jioufen Teahouse Restaurant</strong> &mdash; traditional Taiwanese mountain cooking: three-cup chicken, salted duck, mountain vegetables stir-fry, oyster mee sua. Possibly the most peaceful Christmas Day dinner of your life.</p>
+          <div class="time">Late</div>
+          <h4>Cocktails at Indulge Bistro</h4>
+          <p>Asia&rsquo;s 50 Best Bars regular. Bartender Aki Wang. Try the <strong>Boulevardier with Kavalan</strong> &mdash; Taiwan&rsquo;s World&rsquo;s Best Single Malt 2015.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Taipei Day 2 - Jiufen Day Trip -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 2 &middot; Friday Dec 26</div></div>
+      <div class="day-title">Day Trip: Jiufen Old Street &amp; Pingxi Sky Lanterns</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1601723913461-0a51fcd31fa3?w=600&q=80" alt="Jiufen Old Street lanterns">
+          <img src="https://images.unsplash.com/photo-1602473812155-c7c84c87e8c1?w=600&q=80" alt="A-Mei Teahouse">
+          <img src="https://images.unsplash.com/photo-1610022568093-d1c0e74b8c0f?w=600&q=80" alt="Pingxi sky lanterns">
+        </div>
+        <div class="time-block">
+          <div class="time">6:30 AM</div>
+          <h4>Fu Hang Soy Milk Dawn Breakfast</h4>
+          <p>Taipei&rsquo;s most legendary breakfast. Line forms 5:30 AM. Once-in-a-lifetime <strong>shaobing youtiao</strong> (sesame flatbread sandwich with fried dough cruller) + <strong>xian dou jiang</strong> (savory soy milk with dried shrimp + scallion + pork floss in a hot bowl). Hu Guo Building 2F.</p>
+          <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; No NYC restaurant makes savory soy milk like this</div>
+        </div>
+        <div class="time-block">
+          <div class="time">9:00 AM</div>
+          <h4>Private Driver to Jiufen (~1 hr)</h4>
+          <p>Drive through Keelung mountains, arrive at Jiufen by 10 AM. Beat the afternoon tour-bus rush.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">10:00 AM</div>
+          <h4>Jiufen Old Street + A-Mei Teahouse</h4>
+          <p>Former 1893 gold-mining mountain village. Steep stone steps, red lanterns, narrow alleys cantilevered over the East China Sea. <strong>A-Mei Teahouse</strong> &mdash; the literal inspiration for <em>Spirited Away</em>&rsquo;s bathhouse. Sit on the wood balcony with oolong + traditional Chinese desserts.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; The Spirited Away tea house. There is genuinely nothing like this on earth.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">12:30 PM</div>
+          <h4>Jiufen Old Street Snack Tour</h4>
+          <p><strong>Taro balls</strong> (in shaved ice or sweet soup &mdash; Jiufen invented them), <strong>peanut roll ice cream</strong> (peanut brittle shaved over ice cream wrapped in spring roll skin with cilantro), <strong>fish ball noodles</strong>, <strong>stinky tofu</strong>.</p>
           <span class="tag tag-food">Food</span>
         </div>
         <div class="time-block">
-          <div class="time">9:30 PM &mdash; Walk the Empty Village</div>
-          <h4>Lantern-Lit Alleys After Hours</h4>
-          <p>This is what overnight guests get and day-trippers don&rsquo;t. The shops close, the buses leave, and Jiufen returns to the village it was before tourism. Walk Jishan Street, Shuqi Road (the iconic stair photo), and the upper sea-view paths in near silence. Just lanterns, mist, and the sound of geta on stone.</p>
-          <div class="nyc-badge">&#9733; Jiufen at night is the version no day-tripper sees</div>
+          <div class="time">3:00 PM</div>
+          <h4>Pingxi Sky Lantern Release</h4>
+          <p>30 min from Jiufen. Pingxi line: a 1920s coal-mining railway. Buy a paper sky lantern, write wishes on each face in calligraphy ink, release it on the train tracks (yes, on the tracks &mdash; the train stops). Watch your wishes climb into the mountain sky.</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-event">Event</span>
+          <div class="nyc-badge">&#9733; Releasing a sky lantern from a 100-year-old railway track in the mountains</div>
+        </div>
+        <div class="time-block">
+          <div class="time">5:30 PM</div>
+          <h4>Return to Taipei (~1 hr)</h4>
+          <p>Back to Mandarin Oriental. Hot shower, quick rest.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">7:30 PM</div>
+          <h4>Raohe Street Night Market &mdash; Black Pepper Buns</h4>
+          <p>The most authentic night market in Taipei. 600m long. Start at the temple gate, eat your way to the other end. <strong>Fuzhou Black Pepper Buns</strong> (Michelin Bib Gourmand &mdash; baked in a tandoor-style clay oven), <strong>stinky tofu</strong>, <strong>medicinal pork ribs soup</strong> at Lin Family.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
+        </div>
+        <div class="time-block">
+          <div class="time">10:30 PM</div>
+          <h4>Songshan Cultural Park Late-Night Walk</h4>
+          <p>Former tobacco factory turned design and arts park. Open late. Quiet, lantern-lit, the antidote to the night market crowds.</p>
+          <span class="tag tag-culture">Culture</span>
         </div>
       </div>
     </div>
 
-    <div class="flight-divider">
-      <div class="plane">&#9992;&#65039;</div>
-      <div class="route-text">Jiufen &rarr; Hong Kong</div>
-      <div class="detail">Dec 26 &middot; Morning Shifen sky lantern, drive to TPE airport, fly to HK PM &middot; ~1.75 hr flight</div>
+    <!-- Taipei Day 3 -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 3 &middot; Saturday Dec 27</div></div>
+      <div class="day-title">Temples, National Palace Museum &amp; Beef Noodle</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1591801074660-d3f96c8e4f17?w=600&q=80" alt="Longshan Temple Taipei">
+          <img src="https://images.unsplash.com/photo-1574484184081-afea8a62f9c4?w=600&q=80" alt="National Palace Museum">
+          <img src="https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=600&q=80" alt="Taiwan beef noodle soup">
+        </div>
+        <div class="time-block">
+          <div class="time">7:00 AM</div>
+          <h4>Yong He Soy Milk King &mdash; 24-Hour Institution</h4>
+          <p>The other great Taipei breakfast. Open 24 hours. <strong>Sweet soy milk</strong> with <strong>youtiao</strong>, <strong>shaobing</strong> with egg, <strong>dan bing</strong> (egg crepe). Locals only at this hour.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">9:00 AM</div>
+          <h4>Longshan Temple &mdash; 1738 Buddhist-Taoist</h4>
+          <p>Oldest temple in Taipei. Survived earthquakes, fires, US WWII bombing. Active worship site &mdash; arrive early for the morning chanting. Octagonal pavilion roof in Fujian architectural style. Watch the bao bei (moon block) divination.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">10:30 AM</div>
+          <h4>Bao&rsquo;an Temple &mdash; UNESCO-Recognized Restoration</h4>
+          <p>UNESCO Asia-Pacific Heritage Award for restoration. Dedicated to Baosheng Dadi, the god of medicine. Cantonese temple-roof eaves art &mdash; thousands of porcelain figurines.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">12:00 PM</div>
+          <h4>Lunch: Yongkang Beef Noodle</h4>
+          <p>Taipei is the global home of beef noodle soup. Yongkang has been making it since 1963 with a 24-hour beef bone broth, hand-pulled noodles, half-cooked egg, scallion, pickled mustard greens. Order the <strong>braised beef shank &amp; tendon</strong>.</p>
+          <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; Taiwanese beef noodle &ne; Chinese beef noodle &ne; Vietnamese pho. Only here.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">2:00 PM</div>
+          <h4>National Palace Museum</h4>
+          <p>700,000 artifacts &mdash; the greatest collection of Chinese imperial art on earth. Brought from the Forbidden City in 1949. <strong>Jadeite Cabbage</strong>, <strong>Meat-Shaped Stone</strong>, Song Dynasty calligraphy, oracle bones. Allow 3 hours.</p>
+          <span class="tag tag-culture">Culture</span>
+          <div class="nyc-badge">&#9733; The Met has nothing like this on Chinese imperial art</div>
+        </div>
+        <div class="time-block">
+          <div class="time">5:30 PM</div>
+          <h4>Yongkang Street Snack Crawl</h4>
+          <p><strong>Smoothie House</strong> (mango shaved ice &mdash; out of season but the milk-and-strawberry version is the December play), <strong>Kao Chi</strong> (xiaolongbao alternative to Din Tai Fung &mdash; arguably better), <strong>Tianjin Scallion Pancake</strong> at the corner stall.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">8:00 PM</div>
+          <h4>Dinner: RAW &mdash; Andr&eacute; Chiang&rsquo;s 2-Michelin-Star Tasting</h4>
+          <p>Singapore-Taiwan superstar chef. Modern Taiwanese tasting menu. The dining room is a single 8m walnut wood sculpture by Weiweiwei. 8 courses, ~$160. Book 3 months ahead. The hardest reservation in Taipei.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">11:00 PM</div>
+          <h4>Beitou Hot Springs (Public Millennium Hot Spring)</h4>
+          <p>20 min by MTR from central Taipei. Sulfur hot springs in Yangmingshan volcanic valley. <strong>Millennium Hot Spring</strong> is the public bath at $1.50 entry. Six pools at different temperatures. Open until 10 PM &mdash; squeeze in if energy allows, or visit in afternoon Day 3.</p>
+          <span class="tag tag-nature">Nature</span><span class="tag tag-culture">Culture</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Taipei Day 4 morning -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--taipei-color);">Day 4 &middot; Sunday Dec 28 (AM)</div></div>
+      <div class="day-title">Final Taipei Breakfast &rarr; Flight to HK &rarr; Ferry to Macao</div>
+      <div class="day-card-body">
+        <div class="time-block">
+          <div class="time">7:00 AM</div>
+          <h4>Final Taiwan Breakfast: Lin Dong Fang Beef Noodle</h4>
+          <p>Open 11 AM&ndash;3 AM, so technically this is &ldquo;late late.&rdquo; Their <strong>spicy beef tendon noodle</strong> is the ultimate goodbye to Taiwan. Eat at the bar.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">9:30 AM</div>
+          <h4>Private Car to Taoyuan Airport</h4>
+          <p>Check out of Mandarin Oriental. Drive to TPE. ~45 min.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ═══════════════════ HONG KONG ═══════════════════ -->
-  <section class="city-section hk-section">
+  <!-- Flight: Taipei → HK -->
+  <div class="flight-divider">
+    <div class="plane">&#9992;</div>
+    <div class="route-text">Taipei &rarr; Hong Kong</div>
+    <div class="detail">Dec 28 (Sun) &middot; ~1h 45m flight &middot; Land HKG midday &middot; TurboJET ferry to Macao (1 hr)</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ MACAO ═══════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="city-section macao-section">
     <div class="city-hero">
-      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=1600&q=80');"></div>
+      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=1600&q=80');"></div>
       <div class="city-hero-content">
-        <div class="city-badge" style="background:var(--hk-color);">Leg 4 of 4</div>
-        <h2>Hong Kong</h2>
-        <div class="city-dates">Dec 26 (Sat) &ndash; Dec 30 (Wed AM) &middot; 4 Nights &middot; Dim Sum, Wok Hei, WinterFest</div>
+        <div class="city-badge" style="background:var(--macao-color);">Leg 4 of 5</div>
+        <h2>Macao</h2>
+        <div class="city-dates">Dec 28 (Sun) &ndash; Dec 29 (Mon AM) &middot; 1 Night &middot; Portuguese-Asian Fusion &amp; Zaha Hadid</div>
       </div>
     </div>
 
     <div class="stays-row">
       <div class="stay-card">
         <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80');">
-          <div class="nights-badge" style="background:var(--hk-color);">4 NIGHTS</div>
+          <div class="nights-badge" style="background:var(--macao-color);">1 NIGHT</div>
         </div>
         <div class="stay-info">
-          <h4>Rosewood Hong Kong</h4>
-          <p>18 Salisbury Rd, Tsim Sha Tsui. <strong>#1 on World&rsquo;s 50 Best Hotels 2024.</strong> Victoria Harbour views from 80%+ of rooms. The Asaya spa. Holds 3 Michelin-starred restaurants nearby. Walking distance to Star Ferry, Temple Street.</p>
-          <p class="stay-why">&ldquo;The undisputed top address in Hong Kong right now. Harbor views from your bath.&rdquo;</p>
+          <h4>Morpheus by Zaha Hadid</h4>
+          <p>Zaha Hadid&rsquo;s final completed building (2018). The world&rsquo;s first free-form high-rise exoskeleton. 770 rooms in a curved black-mesh tower. 3-Michelin-star Alain Ducasse at Morpheus on-site. Skin-tearing piece of architecture.</p>
+          <p class="stay-why">&ldquo;Sleeping inside Zaha Hadid&rsquo;s final building. There is no equivalent anywhere.&rdquo;</p>
         </div>
       </div>
     </div>
 
-    <!-- HK Day 8 -->
+    <!-- Macao Day -->
     <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 8 &middot; Saturday Dec 26</div></div>
-      <div class="day-title">Land &amp; Eat &mdash; Star Ferry, Temple Street, Egg Waffles</div>
+      <div class="day-card-header"><div class="day-label" style="color:var(--macao-color);">Day 1 &middot; Sunday Dec 28</div></div>
+      <div class="day-title">Land HK &rarr; Ferry to Macao &mdash; Senado Square &amp; Portuguese Egg Tarts</div>
       <div class="day-card-body">
         <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=80" alt="Star Ferry Hong Kong">
-          <img src="https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4?w=600&q=80" alt="Temple Street Night Market">
-          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80" alt="Hong Kong neon">
+          <img src="https://images.unsplash.com/photo-1581338834647-b0fb40704e21?w=600&q=80" alt="Senado Square Macao">
+          <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?w=600&q=80" alt="Ruins of St. Paul">
+          <img src="https://images.unsplash.com/photo-1551879400-111a9087cd86?w=600&q=80" alt="Portuguese egg tart">
         </div>
         <div class="time-block">
-          <div class="time">7:00 AM &mdash; Sunrise from Jiufen</div>
-          <h4>Mountain Mist Breakfast at the Inn</h4>
-          <p>Wake to the East China Sea below the village. Traditional breakfast: rice porridge, salted duck egg, pickled vegetables, hot soy milk.</p>
-          <span class="tag tag-food">Breakfast</span>
+          <div class="time">12:30 PM</div>
+          <h4>Land HKG &rarr; TurboJET Ferry to Macao</h4>
+          <p>Land at HKG midday. Skip the city entry &mdash; go straight to the SkyPier terminal in the airport for the direct ferry to Macao. 70 min crossing. Land at the Outer Harbour Ferry Terminal in Macao Peninsula.</p>
         </div>
         <div class="time-block">
-          <div class="time">9:00 AM &mdash; Sky Lanterns</div>
-          <h4>Shifen Sky Lantern Release</h4>
-          <p>30-min drive from Jiufen. Write wishes on a paper sky lantern and release it over the old railway tracks (the trains still run through Shifen station &mdash; pause when one passes). NT$150-200/lantern. Iconic Taiwan moment.</p>
-          <span class="tag tag-culture">Iconic</span>
-          <div class="nyc-badge">&#9733; Sky lanterns released over a working railway track. Pure Taiwan.</div>
+          <div class="time">3:00 PM</div>
+          <h4>Check Into Morpheus by Zaha Hadid</h4>
+          <p>Located on Cotai Strip. Hotel taxi from ferry (~20 min). The lobby has a 40m atrium with a sky bridge that is itself a structural element. Take 15 minutes to walk the building.</p>
+          <span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; Zaha&rsquo;s last completed building. NYC has no Zaha building.</div>
         </div>
         <div class="time-block">
-          <div class="time">11:30 AM &mdash; Drive to TPE</div>
-          <h4>Taipei Taoyuan Airport</h4>
-          <p>Private car ~1 hr from Shifen to TPE airport. Light lunch in the lounge.</p>
-        </div>
-        <div class="time-block">
-          <div class="time">2:00 PM &mdash; Fly</div>
-          <h4>Taipei TPE &rarr; Hong Kong HKG</h4>
-          <p>~1.75 hr direct (Cathay Pacific or EVA Air). Airport Express train to Kowloon (24 min). Check into Rosewood &mdash; harbor-view room.</p>
+          <div class="time">4:30 PM</div>
+          <h4>Macao Historic Centre &mdash; UNESCO World Heritage</h4>
+          <p>Hotel shuttle to Senado Square. 25 buildings + plazas dating 1557&ndash;1990s. <strong>Senado Square</strong> (pastel wave-tile Portuguese plaza), <strong>St. Dominic&rsquo;s Church</strong> (1587, butter-yellow), <strong>Largo do S&eacute;</strong>, <strong>Ruins of St. Paul&rsquo;s</strong> (1602 cathedral facade, only the front wall remains, stair-rising into the sky).</p>
+          <span class="tag tag-culture">Culture</span><span class="tag tag-event">Event</span>
+          <div class="nyc-badge">&#9733; A 16th-century Portuguese colonial city in southern China. Nothing remotely like this in the Americas.</div>
         </div>
         <div class="time-block">
           <div class="time">5:30 PM</div>
-          <h4>Star Ferry Sunset Crossing</h4>
-          <p>The most iconic 8-minute ride in Asia. Upper deck, TST to Central, HK$5. Watch the skyline ignite. Operating since 1888.</p>
-          <span class="tag tag-culture">Iconic</span>
-          <div class="nyc-badge">&#9733; Star Ferry has been crossing the same harbor since 1888</div>
-        </div>
-        <div class="time-block">
-          <div class="time">5:00 PM &mdash; Snack</div>
-          <h4>Egg Waffles in Mong Kok</h4>
-          <p>Crispy outside, custardy inside. From a street vendor&rsquo;s heavy cast-iron mold. The original Hong Kong street snack &mdash; hours of practice required to master the texture.</p>
-          <span class="tag tag-food">Snack</span>
-          <div class="nyc-badge">&#9733; Hong Kong egg waffles &mdash; the original from a hand-pressed cast-iron mold</div>
-        </div>
-        <div class="time-block">
-          <div class="time">7:00 PM &mdash; Dinner</div>
-          <h4>Mido Cafe (Open Since 1950)</h4>
-          <p>Original retro furniture, mosaic floors, vintage cha chaan teng (HK diner) menu. Order <strong>baked pork chop rice</strong>, <strong>HK milk tea</strong>, <strong>French toast with peanut butter and condensed milk</strong>. Time capsule.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; A 1950 cha chaan teng with original interiors. Time travel.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:00 PM</div>
-          <h4>Temple Street Night Market</h4>
-          <p>Fortune tellers reading palms under hanging lights. Cantonese opera by elderly singers. Curry fish balls, beef brisket noodles, dragon&rsquo;s beard candy. Pure HK street energy.</p>
-          <span class="tag tag-culture">Culture</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- HK Day 9 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 9 &middot; Sunday Dec 27</div></div>
-      <div class="day-title">M+ Museum, Tai Kwun &amp; Bamboo-Pole Noodles</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Dim sum">
-          <img src="https://images.unsplash.com/photo-1545987796-200677ee1011?w=600&q=80" alt="M+ Museum architecture">
-          <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=80" alt="HK heritage architecture">
-        </div>
-        <div class="time-block">
-          <div class="time">8:00 AM &mdash; Breakfast</div>
-          <h4>One Dim Sum or Tim Ho Wan (Local Branch)</h4>
-          <p>Skip Lin Heung (recently closed). <strong>One Dim Sum</strong> in Mong Kok &mdash; Michelin Bib Gourmand, made-to-order classics. Or the local <strong>Tim Ho Wan</strong> branch (the world&rsquo;s most affordable Michelin meal). Order baked BBQ pork buns, har gow, siu mai. ~HK$200/pp.</p>
-          <span class="tag tag-food">Breakfast</span>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 AM &mdash; The Big Culture Stop</div>
-          <h4>M+ Museum (West Kowloon Cultural District)</h4>
-          <p><strong>Opened November 2021. Designed by Herzog &amp; de Meuron.</strong> 700,000+ sqm complex housing the world&rsquo;s most ambitious museum of contemporary East Asian visual culture &mdash; design, architecture, moving image, art. Massive scale, stunning harbor-facing facade. The single most important new cultural institution in Asia in the past decade.</p>
-          <span class="tag tag-culture">Art</span>
-          <div class="nyc-badge">&#9733; Asia&rsquo;s answer to MoMA + Tate, opened 2021. Cannot be replicated.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM &mdash; Quick Lunch</div>
-          <h4>Lau Sum Kee Bamboo-Pole Noodles (Michelin Bib Gourmand)</h4>
-          <p>Subway from West Kowloon to Sham Shui Po (10 min). <strong>The dying craft &mdash; artisans bounce on bamboo poles to knead dough.</strong> Only a handful of practitioners worldwide. Order the dry shrimp roe noodles. Quick stop, eat in 20 min.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; Bamboo-pole noodles. Almost extinct as a craft.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">2:00 PM &mdash; Heritage Complex</div>
-          <h4>Tai Kwun (Former Central Police Station, 1841-1925)</h4>
-          <p>Massive 16-building heritage compound in Central, restored and reopened 2018 by Herzog &amp; de Meuron (yes, again). 3 zones: Police HQ, Magistracy, Victoria Prison. Now <strong>contemporary art galleries, F&amp;B, free to enter</strong>. Major rotating exhibitions (Bharti Kher, Yayoi Kusama have shown here). 2-3 hours of wandering.</p>
-          <span class="tag tag-culture">Heritage + Art</span>
-          <div class="nyc-badge">&#9733; HK&rsquo;s top heritage + arts complex. Free admission. World-class.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">5:00 PM &mdash; Snack + Walk</div>
-          <h4>Kam Wah Cafe &mdash; Pineapple Bun</h4>
-          <p>The legendary <strong>bo lo bao</strong>: crispy sugary top, fluffy bread, thick slab of cold butter melting inside. Plus an HK milk tea. 5-min eat-and-go.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 PM &mdash; The Main Dinner</div>
-          <h4>Oi Man Sang Dai Pai Dong (Since 1956)</h4>
-          <p>The chef uses <em>jet fuel</em> for maximum wok hei (the &ldquo;breath of the wok&rdquo; flame char). <strong>Only ~17 licensed dai pai dongs remain in all of Hong Kong.</strong> When the elderly owners retire, this entire food tradition dies.</p>
-          <span class="tag tag-food">Food</span><span class="tag tag-unique">Endangered</span>
-          <div class="nyc-badge">&#9733; Jet-fuel wok hei is illegal under NYC fire codes. Literally impossible elsewhere.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 PM &mdash; Nightcap</div>
-          <h4>The Old Man or Quinary (Asia 50 Best Bars)</h4>
-          <p>Two of the world&rsquo;s top cocktail bars, both in Central. The Old Man for Hemingway-themed precision cocktails. Quinary for molecular-style drinks.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- HK Day 10 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 10 &middot; Monday Dec 28</div></div>
-      <div class="day-title">Roast Goose, Snake Soup &amp; The Peak</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Roast goose">
-          <img src="https://images.unsplash.com/photo-1548943487-a2e4e43b4853?w=600&q=80" alt="Victoria Peak Hong Kong">
-          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining HK">
-        </div>
-        <div class="time-block">
-          <div class="time">7:30 AM &mdash; Breakfast</div>
-          <h4>Australia Dairy Company</h4>
-          <p>47-49 Parkes St, Jordan. Opens 7:30 AM. Legendary scrambled eggs, steamed milk pudding, macaroni with ham in chicken broth. Service is famously brusque and lightning-fast. Cash only. Arrive before 8 AM to beat the queue.</p>
-          <span class="tag tag-food">Breakfast</span>
-          <div class="nyc-badge">&#9733; HK cha chaan teng breakfast culture doesn&rsquo;t exist in NYC</div>
-        </div>
-        <div class="time-block">
-          <div class="time">10:00 AM &mdash; Tang Dynasty Garden</div>
-          <h4>Nan Lian Garden + Chi Lin Nunnery (Diamond Hill)</h4>
-          <p>The most serene spot in Hong Kong. <strong>Nan Lian Garden</strong> is a 3.5-hectare classical Chinese garden built in strict <strong>Tang Dynasty style</strong> (8th century) &mdash; not a single nail or screw used in the wooden architecture. Adjacent <strong>Chi Lin Nunnery</strong> (Tang-style Buddhist monastery, all wooden joinery) houses gilded Buddha statues. Tea pavilion in the middle of the garden pond. Mountain pine bonsai. Free admission.</p>
-          <span class="tag tag-culture">Temple</span><span class="tag tag-nature">Garden</span>
-          <div class="nyc-badge">&#9733; Tang Dynasty wooden architecture, classical Chinese garden, in central HK</div>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM &mdash; Lunch</div>
-          <h4>Yat Lok Roast Goose (1 Michelin Star)</h4>
-          <p>Since 2015 Michelin-starred. 20-step roasting process, paper-thin crispy skin, juicy meat. 34-38 Stanley St, Central. Cash only.</p>
-          <span class="tag tag-food">Food</span>
-          <div class="nyc-badge">&#9733; USDA goose import restrictions make Cantonese roast goose impossible in NYC</div>
-        </div>
-        <div class="time-block">
-          <div class="time">2:00 PM</div>
-          <h4>Man Mo Temple + Hollywood Road Galleries</h4>
-          <p><strong>Man Mo Temple</strong> (1847) &mdash; gods of Literature and War, massive incense coils hanging from the ceiling, atmospheric and quiet. Then walk down <strong>Hollywood Road</strong>: antique shops, contemporary art galleries (Lehmann Maupin, Pearl Lam, Gagosian outpost), street art, the PoHo cafe district. The most walkable cultural strip in HK.</p>
+          <h4>A-Ma Temple &mdash; The City&rsquo;s Origin</h4>
+          <p>1488 Taoist temple to the goddess Mazu. Macao is literally named after her (&ldquo;A-Ma Gao&rdquo; = Bay of A-Ma). Stone gateways, ancient banyans, six worship halls climbing the cliff. The smoke of incense fills your hair.</p>
           <span class="tag tag-culture">Culture</span>
         </div>
         <div class="time-block">
-          <div class="time">4:00 PM &mdash; Optional Snack</div>
-          <h4>Mango Sago at Hui Lau Shan</h4>
-          <p>Chilled mango sago with pomelo &mdash; the quintessential HK dessert. 5-min stop. Skip if you&rsquo;re full.</p>
-          <span class="tag tag-food">Snack</span>
-        </div>
-        <div class="time-block">
-          <div class="time">5:30 PM</div>
-          <h4>Peak Tram &rarr; Victoria Peak &rarr; Ozone Bar</h4>
-          <p>Peak Tram since 1888. Catch both daylight and night skyline views from the top. Then drinks at <strong>Ozone</strong> on the 118th floor of the Ritz-Carlton ICC &mdash; <strong>world&rsquo;s highest bar at 484m.</strong></p>
-          <span class="tag tag-culture">Iconic</span>
-          <div class="nyc-badge">&#9733; World&rsquo;s highest bar. The view is unreal.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">8:30 PM &mdash; Dinner</div>
-          <h4>Lung King Heen &#11088;&#11088; (2 Michelin Stars)</h4>
-          <p>The Four Seasons Cantonese restaurant. <strong>The first Chinese restaurant in the world to receive 3 Michelin stars (held it 13 years, now 2).</strong> Cantonese fine dining at its global peak. Book 6+ weeks ahead.</p>
-          <span class="tag tag-food">Fine Dining</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- HK Day 11 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 11 &middot; Tuesday Dec 29</div></div>
-      <div class="day-title">Final Day &mdash; Markets, Symphony of Lights, Farewell</div>
-      <div class="day-card-body">
-        <div class="day-img-strip">
-          <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Cantonese dim sum">
-          <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=600&q=80" alt="HK Symphony of Lights">
-          <img src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=600&q=80" alt="Chinese cocktail bar">
-        </div>
-        <div class="time-block">
-          <div class="time">8:00 AM &mdash; Final Dim Sum</div>
-          <h4>Tim Ho Wan (1 Michelin Star)</h4>
-          <p>The world&rsquo;s most affordable Michelin-starred meal. Original Sham Shui Po location. <strong>Baked BBQ pork buns</strong> (cult dish), <strong>steamed dumplings</strong>, <strong>shrimp har gow</strong>. ~HK$200/pp.</p>
-          <span class="tag tag-food">Breakfast</span>
-        </div>
-        <div class="time-block">
-          <div class="time">10:30 AM &mdash; Fortune-Telling Temple</div>
-          <h4>Wong Tai Sin Temple</h4>
-          <p>Hong Kong&rsquo;s most popular Taoist temple, dedicated to a 4th-century shepherd boy who became a deity. <strong>Famous for fortune-telling by kau cim (lot drawing).</strong> Worshippers shake numbered bamboo sticks until one falls out, then take the number to the on-site fortune tellers. Iconic red-pillared architecture, dragon murals, Nine Dragon Wall. Walk the Good Wish Garden.</p>
-          <span class="tag tag-culture">Temple</span>
-          <div class="nyc-badge">&#9733; Hong Kong&rsquo;s living folk religion in action. Locals doing real fortune-telling, not theater for tourists.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">12:30 PM &mdash; Lunch</div>
-          <h4>Mott 32</h4>
-          <p>Final Cantonese feast. Modern Cantonese in a Tatler-cool subterranean dining room beneath Standard Chartered Bank. <strong>Apple-wood-smoked Peking duck</strong> (must order 24 hrs ahead, but lunch service is faster), barbecue Iberico pork, hot &amp; sour soup with stuffed wonton. The most-photographed Cantonese restaurant in HK.</p>
+          <div class="time">6:30 PM</div>
+          <h4>Lord Stow&rsquo;s Bakery (Coloane Village) &mdash; Original Macao Egg Tart</h4>
+          <p>The famous pastel de nata of Asia. Lord Stow&rsquo;s 1989 original location in Coloane Village. Crisp lard-puff pastry, caramelized custard top. Eat 3-4. Bring 6 back. The Coloane Village around it is the old fishing-village heart of Macao &mdash; cobblestones, yellow chapel.</p>
           <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; The original Macanese egg tart at its 1989 source</div>
         </div>
         <div class="time-block">
-          <div class="time">2:30 PM &mdash; Design District</div>
-          <h4>PMQ + Sheung Wan Galleries</h4>
-          <p><strong>PMQ</strong> (Police Married Quarters) &mdash; 1951 colonial police housing converted in 2014 into HK&rsquo;s top design and creative space. 100+ independent designer studios, jewellery makers, ceramic shops, indie fashion. Two L-shaped buildings around a central courtyard. Then walk down to <strong>Sheung Wan</strong>: dried seafood street, Chinese medicine shops, hidden art galleries, Tai Ping Shan area.</p>
-          <span class="tag tag-culture">Design</span>
+          <div class="time">7:30 PM</div>
+          <h4>Dinner: Fernando&rsquo;s on Hac Sa Beach</h4>
+          <p>Legendary Portuguese restaurant on Macao&rsquo;s black sand beach. No menu, no website, no reservations, no air-con. <strong>Roast suckling pig</strong>, <strong>African chicken</strong> (Macao&rsquo;s signature: piri-piri + coconut + Goa fusion), <strong>clams in white wine</strong>, <strong>charcoal-grilled sardines</strong>, sangria poured from a jug. Anthony Bourdain dedicated an episode to it.</p>
+          <span class="tag tag-food">Food</span><span class="tag tag-unique">Only here</span>
+          <div class="nyc-badge">&#9733; Portuguese-Macanese-African fusion at the literal end of a black sand beach in Asia. No NYC analog.</div>
         </div>
         <div class="time-block">
-          <div class="time">5:00 PM &mdash; Christmas Markets</div>
-          <h4>Statue Square + Times Square Causeway Bay</h4>
-          <p>Statue Square (Central) has the city&rsquo;s most photogenic Christmas tree and HK WinterFest stalls. Times Square (Causeway Bay) has the most over-the-top Christmas decoration in the city &mdash; LED arches, projection mapping, choirs.</p>
-          <span class="tag tag-event">Christmas</span>
-        </div>
-        <div class="time-block">
-          <div class="time">8:00 PM &mdash; The Iconic Show</div>
-          <h4>Symphony of Lights (Christmas Edition)</h4>
-          <p>Daily 8 PM. <strong>The world&rsquo;s largest permanent light and sound show</strong> &mdash; Guinness Record. December has a special Christmas overlay. Best viewed from the TST waterfront promenade or from your Rosewood harbor-view room.</p>
-          <span class="tag tag-event">Iconic</span>
-          <div class="nyc-badge">&#9733; Guinness World Record largest light show. Christmas overlay.</div>
-        </div>
-        <div class="time-block">
-          <div class="time">9:30 PM &mdash; Farewell Dinner</div>
-          <h4>Ho Lee Fook (1 Michelin Star)</h4>
-          <p>Modern Cantonese, neon-lit basement, Hong Kong&rsquo;s coolest dining room. Famous &ldquo;Roast Wagyu Short Rib&rdquo; with jalape&ntilde;o purée. Late-night vibe. Book 4 weeks ahead.</p>
-          <span class="tag tag-food">Fine Dining</span>
-        </div>
-        <div class="time-block">
-          <div class="time">11:30 PM &mdash; Last Drink</div>
-          <h4>Aqua Spirit, 30th Floor</h4>
-          <p>Floor-to-ceiling windows over the harbor. Cocktail with the entire HK skyline below. Fitting closer.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- HK Day 12 -->
-    <div class="day-card">
-      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 12 &middot; Wednesday Dec 30</div></div>
-      <div class="day-title">Depart Hong Kong &rarr; JFK</div>
-      <div class="day-card-body">
-        <div class="time-block">
-          <div class="time">Morning</div>
-          <h4>Final Breakfast + HKG</h4>
-          <p>Hotel breakfast or one final cha chaan teng (Capital Cafe nearby). Airport Express to HKG (24 min). Cathay Pacific CX846 or similar direct to JFK ~16 hr.</p>
+          <div class="time">10:30 PM</div>
+          <h4>The 8 at Grand Lisboa &mdash; 3-Michelin-Star Late Tea</h4>
+          <p>The only 3-Michelin-star Chinese restaurant in Macao. Stay in for a late dessert + drinks course. <strong>Bird&rsquo;s nest with bird&rsquo;s nest soup</strong>, <strong>roast pigeon</strong>. The dining room is one of the most beautifully designed rooms in Asia.</p>
+          <span class="tag tag-food">Food</span>
         </div>
       </div>
     </div>
   </section>
 
-  <div style="height: 2rem;"></div>
-
-  <div class="footer">
-    <div class="footer-route">Plan B &middot; JFK &rarr; ICN &rarr; TPE &rarr; Jiufen &rarr; HKG &rarr; JFK (Cathay direct)</div>
-    <div class="footer-note">Winter Brothers 2026 &middot; Plan B &middot; Seoul + Taipei + Jiufen + Hong Kong</div>
+  <!-- Ferry: Macao → HK -->
+  <div class="flight-divider">
+    <div class="plane">&#128674;</div>
+    <div class="route-text">Macao &rarr; Hong Kong</div>
+    <div class="detail">Dec 29 (Mon) &middot; TurboJET ferry &middot; ~1 hour &middot; Land HK Macau Ferry Terminal</div>
   </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <!-- ═══════════════════ HONG KONG · FINAL ═══════════════════ -->
+  <!-- ═══════════════════════════════════════════════════════════════════ -->
+  <section class="city-section hk-section">
+    <div class="city-hero">
+      <div class="city-hero-img" style="background-image:url('https://images.unsplash.com/photo-1576487248805-cd45f6c2efeb?w=1600&q=80');"></div>
+      <div class="city-hero-content">
+        <div class="city-badge" style="background:var(--hk-color);">Leg 5 of 5</div>
+        <h2>Hong Kong (Return)</h2>
+        <div class="city-dates">Dec 29 (Mon) &ndash; Dec 30 (Tue AM) &middot; 1 Night &middot; Central Side, Final Yum Cha</div>
+      </div>
+    </div>
+
+    <div class="stays-row">
+      <div class="stay-card">
+        <div class="stay-img" style="background-image:url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80');">
+          <div class="nights-badge" style="background:var(--hk-color);">1 NIGHT</div>
+        </div>
+        <div class="stay-info">
+          <h4>Mandarin Oriental Hong Kong</h4>
+          <p>The 1963 grand dame of HK. 502 rooms in Central. The MO Bar, the Krug Room, three Michelin-starred restaurants on-site (Pierre at 2 stars + Man Wah). Different neighborhood from Rosewood &mdash; Central side, business core, dramatic HSBC building views.</p>
+          <p class="stay-why">&ldquo;Switch to the Island side. See HK from the Central perspective for the final night.&rdquo;</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HK Final Day -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 1 &middot; Monday Dec 29</div></div>
+      <div class="day-title">Macao &rarr; Central HK &mdash; The Peak, PMQ, Final Roast Goose</div>
+      <div class="day-card-body">
+        <div class="day-img-strip">
+          <img src="https://images.unsplash.com/photo-1577981515974-87317df2cbf6?w=600&q=80" alt="HK Victoria Peak">
+          <img src="https://images.unsplash.com/photo-1631195977502-a3edd0bce9d2?w=600&q=80" alt="HK roast goose">
+          <img src="https://images.unsplash.com/photo-1576487248805-cd45f6c2efeb?w=600&q=80" alt="Central HK night">
+        </div>
+        <div class="time-block">
+          <div class="time">7:30 AM</div>
+          <h4>Macao Final Breakfast: Tai Lei Loi Kei Pork Chop Bun</h4>
+          <p>The most famous pork chop bun in Macao. Buttered crispy roll. Single thick fried pork chop. Eaten at 7 AM standing on the street in Taipa Village. The fat hits.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">10:00 AM</div>
+          <h4>TurboJET Ferry: Macao &rarr; Hong Kong</h4>
+          <p>1 hour crossing. Land at the HK-Macau Ferry Terminal in Sheung Wan. Quick MTR or taxi to Mandarin Oriental in Central.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">12:00 PM</div>
+          <h4>Check Into Mandarin Oriental + Lunch at Man Wah</h4>
+          <p>Check-in. Lunch at <strong>Man Wah</strong> &mdash; 1 Michelin star, on the 25th floor with the postcard view of Victoria Harbour and the HSBC building. Traditional Cantonese: <strong>crispy chicken</strong>, <strong>Peking duck</strong>, <strong>steamed garoupa</strong>, <strong>lo mai gai</strong> in lotus leaf.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+        <div class="time-block">
+          <div class="time">2:30 PM</div>
+          <h4>Victoria Peak via Tram</h4>
+          <p>The 1888 Peak Tram &mdash; 552m climb at 27 degrees gradient. Lower-level tram seats. From the top: HK Island, Kowloon, the South China Sea. The single greatest urban panorama in Asia.</p>
+          <span class="tag tag-nature">Nature</span><span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">4:30 PM</div>
+          <h4>PMQ &mdash; Police Married Quarters Creative District</h4>
+          <p>1951 colonial police quarters converted to creative studios. 100+ design boutiques, indie galleries, two restaurants. Stop for HK-roasted artisan coffee at <strong>Aria</strong>. Pick up a Hong Kong design souvenir.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">6:00 PM</div>
+          <h4>Hollywood Road + Antique Shops + Man Mo Temple</h4>
+          <p>Walk Hollywood Rd from PMQ. <strong>Man Mo Temple</strong> (1847 Taoist temple to the gods of literature and war, the hanging incense coils make the ceiling smoke-thick). Then antique shops, the famous mid-levels escalator, dai pai dong stops.</p>
+          <span class="tag tag-culture">Culture</span>
+        </div>
+        <div class="time-block">
+          <div class="time">8:00 PM</div>
+          <h4>Dinner: Yat Lok &mdash; 3-Michelin Roast Goose</h4>
+          <p>The legendary roast goose. 3 Michelin stars 2024. Crisp lacquered skin, juicy meat, the side of plum sauce is sacred. Order <strong>roast goose over rice</strong>, <strong>BBQ pork</strong>, <strong>preserved egg tofu</strong>. The 35-seat shop has lines &mdash; book ahead.</p>
+          <span class="tag tag-food">Food</span>
+          <div class="nyc-badge">&#9733; HK roast goose is an entirely different bird than American duck. The version at Yat Lok cannot be replicated elsewhere.</div>
+        </div>
+        <div class="time-block">
+          <div class="time">10:30 PM</div>
+          <h4>Final Cocktails: Quinary or Tell Camellia</h4>
+          <p><strong>Quinary</strong> for the lab-style multi-sensory cocktails (Earl Grey caviar martini). <strong>Tell Camellia</strong> for tea-based mixology in the Old Tai Kwun. World&rsquo;s 50 Best Bars regulars. Final HK nightcap before the 5 AM wake.</p>
+          <span class="tag tag-food">Food</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Departure -->
+    <div class="day-card">
+      <div class="day-card-header"><div class="day-label" style="color:var(--hk-color);">Day 2 &middot; Tuesday Dec 30 &middot; DEPARTURE</div></div>
+      <div class="day-title">Early Flight Home</div>
+      <div class="day-card-body">
+        <div class="time-block">
+          <div class="time">4:30 AM</div>
+          <h4>Pre-Dawn Wake</h4>
+          <p>Pack the night before. Coffee in the room.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">5:00 AM</div>
+          <h4>Private Car to HKG</h4>
+          <p>Empty streets. 30-minute airport run.</p>
+        </div>
+        <div class="time-block">
+          <div class="time">6:00 AM</div>
+          <h4>HKG Departure &rarr; JFK</h4>
+          <p>15-16 hour Pacific crossing. Arrive JFK same-day morning Dec 30 (gain a day across the international date line).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </div>
 
-</div><!-- end Plan B -->
-
-
-<script>
-  function showTab(name) {
-    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(name + '-content').classList.add('active');
-    document.getElementById('tab-' + name + '-btn').classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-</script>
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<div class="footer">
+  <div class="footer-route">JFK &middot; HKG &middot; ICN &middot; TPE &middot; HKG &middot; MFM &middot; HKG &middot; JFK</div>
+  <div class="footer-route" style="margin-top:0.4rem; color:rgba(255,255,255,0.3);">11 nights &middot; 4 cities &middot; 3 UNESCO sites &middot; 7 Michelin stars &middot; 0 NYC repeats</div>
+  <div class="footer-note" style="margin-top:1.5rem;">Winter Brothers 2026 &middot; The Final Plan</div>
+</div>
 
 </body>
 </html>
